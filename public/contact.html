@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="contact">
@@ -85,9 +86,9 @@
           </div>
           <form
             id="contactForm"
-            class="contact-form"
-            action="https://portal.getaptly.com/form/JxBQConmBLudiLuYH/new/cp4D2nkeASMiKu5P3"
-            method="POST"
+            class="contact-form pageclip-form"
+            action="https://send.pageclip.co/JxBQConmBLudiLuYH/new/cp4D2nkeASMiKu5P3"
+            method="post"
           >
             <div class="form-row">
               <input type="text" name="name" placeholder="Full Name" required />
@@ -97,13 +98,15 @@
               <input type="text" name="company" placeholder="Company" />
               <input type="tel" name="phone" placeholder="Phone" />
             </div>
+            <input type="hidden" name="source_url" value="" />
             <textarea
               name="message"
               rows="5"
               placeholder="Share the scope, timeline, and goals for your property"
             ></textarea>
-            <button type="submit" class="btn btn-primary">Request Consultation</button>
-            <p id="contactMessage" class="form-message" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn btn-primary pageclip-form__submit">
+              <span>Request Consultation</span>
+            </button>
           </form>
         </div>
       </section>
@@ -207,5 +210,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
   </body>
 </html>
