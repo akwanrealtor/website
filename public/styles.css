@@ -446,6 +446,34 @@ img {
   align-items: center;
 }
 
+body[data-page='contact'] #connect {
+  background:
+    linear-gradient(130deg, rgba(5, 13, 24, 0.9), rgba(5, 13, 24, 0.55)),
+    url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80')
+      center/cover fixed;
+  color: #fff;
+}
+
+body[data-page='contact'] #connect .eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body[data-page='contact'] #connect p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+body[data-page='contact'] #connect .contact-card {
+  color: var(--text-main);
+}
+
+body[data-page='contact'] #connect .contact-card h4 {
+  color: var(--text-main);
+}
+
+body[data-page='contact'] #connect .contact-card p {
+  color: var(--text-muted);
+}
+
 .contact-form {
   background: rgba(6, 11, 22, 0.6);
   padding: clamp(1.8rem, 4vw, 2.4rem);
@@ -802,6 +830,22 @@ textarea:focus {
   padding: 0 clamp(1.5rem, 5vw, 4rem) 5rem;
   position: relative;
   z-index: 2;
+  background-color: var(--bg-light);
+}
+
+.portal-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      135deg,
+      rgba(6, 11, 22, 0.82),
+      rgba(6, 11, 22, 0.58)
+    ),
+    url('https://images.unsplash.com/photo-1512914890250-352f3c1de0fa?auto=format&fit=crop&w=1600&q=80')
+      center/cover no-repeat;
+  z-index: -1;
+  transition: opacity 0.6s ease;
 }
 
 .portal-auth {
@@ -1173,6 +1217,10 @@ textarea:focus {
 
 .portal-body.portal-authenticated .portal-main {
   margin-top: -6rem;
+}
+
+.portal-body.portal-authenticated .portal-main::before {
+  opacity: 0;
 }
 
 @media (max-width: 960px) {
