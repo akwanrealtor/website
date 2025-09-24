@@ -1,0 +1,49 @@
+{
+  "name": "Summit Property Management",
+  "tagline": "Elevated residential and commercial property management for visionary owners.",
+  "mission": "Deliver hospitality-infused operations and data-driven asset strategy that maximizes NOI while delighting residents.",
+  "headquarters": {
+    "city": "Chicago",
+    "region": "IL",
+    "country": "US"
+  },
+  "services": [
+    "Hospitality-led operations and resident experience teams",
+    "Predictive asset and financial strategy with real-time dashboards",
+    "Sustainability programs, wellness partnerships, and curated amenities"
+  ],
+  "differentiators": [
+    "Concierge teams trained in luxury hospitality",
+    "Predictive maintenance analytics and owner dashboards",
+    "Bespoke lifestyle programming tailored to each property brand"
+  ],
+  "idealClients": [
+    "Luxury residential developers",
+    "Mixed-use property ownership groups",
+    "Institutional investors seeking premium tenant retention"
+  ],
+  "coreMetrics": {
+    "squareFeetManaged": "12M+",
+    "tenantSatisfaction": "98%",
+    "ownerDashboardActivation": "10 business days"
+  },
+  "contact": {
+    "email": "hello@summitpm.com",
+    "phone": "+1-312-555-0198",
+    "website": "https://summitpm.com/"
+  },
+  "faq": [
+    {
+      "question": "What types of properties does SummitPM manage?",
+      "answer": "Boutique luxury residences, flagship commercial towers, and mixed-use destinations seeking hospitality-level experiences."
+    },
+    {
+      "question": "How does SummitPM improve asset performance?",
+      "answer": "We deploy predictive analytics, curated amenities, and hospitality-trained teams to lift NOI, retention, and brand reputation."
+    },
+    {
+      "question": "How quickly do new owners gain access to reporting dashboards?",
+      "answer": "Owners receive secure dashboards and onboarding documentation within 10 business days of signing."
+    }
+  ]
+}

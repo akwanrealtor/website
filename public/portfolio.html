@@ -4,6 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Summit Property Management</title>
+    <meta
+      name="description"
+      content="See SummitPM case studies showcasing luxury residential, commercial, and adaptive reuse properties transformed through hospitality-driven management."
+    />
+    <meta
+      name="keywords"
+      content="property management portfolio, case studies, luxury real estate, adaptive reuse, commercial towers"
+    />
+    <meta name="author" content="Summit Property Management" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://summitpm.com/portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Summit Property Management" />
+    <meta property="og:title" content="Portfolio | Summit Property Management" />
+    <meta
+      property="og:description"
+      content="Discover how SummitPM elevates marquee properties with hospitality, technology, and curated lifestyle programming."
+    />
+    <meta property="og:url" content="https://summitpm.com/portfolio" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1529429617124-aee0a9429e5a?auto=format&fit=crop&w=1600&q=80"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio | Summit Property Management" />
+    <meta
+      name="twitter:description"
+      content="Browse SummitPM's signature property transformations across residential and commercial assets."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1529429617124-aee0a9429e5a?auto=format&fit=crop&w=1600&q=80"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,6 +44,55 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="alternate" type="application/json" href="ai-summary.json" title="SummitPM AI summary" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://summitpm.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Portfolio",
+                "item": "https://summitpm.com/portfolio"
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "SummitPM Case Studies",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Nexus Tower",
+                "url": "https://summitpm.com/portfolio#nexus-tower"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Aurum Residences",
+                "url": "https://summitpm.com/portfolio#aurum-residences"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Harborfront Lofts",
+                "url": "https://summitpm.com/portfolio#harborfront-lofts"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body data-page="portfolio">
     <header class="hero page-hero">
@@ -70,7 +152,7 @@
           </p>
         </div>
         <div class="grid case-study-grid">
-          <article class="card case-study-card">
+          <article class="card case-study-card" id="nexus-tower">
             <div class="card-image">
               <img
                 src="https://images.unsplash.com/photo-1529429617124-aee0a9429e5a?auto=format&fit=crop&w=1200&q=80"
@@ -94,7 +176,7 @@
               </ul>
             </div>
           </article>
-          <article class="card case-study-card">
+          <article class="card case-study-card" id="aurum-residences">
             <div class="card-image">
               <img
                 src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=80"
@@ -118,7 +200,7 @@
               </ul>
             </div>
           </article>
-          <article class="card case-study-card">
+          <article class="card case-study-card" id="harborfront-lofts">
             <div class="card-image">
               <img
                 src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=1200&q=80"

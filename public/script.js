@@ -29,4 +29,36 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sourceUrlInput) {
     sourceUrlInput.value = window.location.href;
   }
+
+  const faqButtons = document.querySelectorAll('.faq-question');
+  if (faqButtons.length) {
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        const answer = button.nextElementSibling;
+
+        faqButtons.forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.setAttribute('aria-expanded', 'false');
+            const otherAnswer = otherButton.nextElementSibling;
+            if (otherAnswer) {
+              otherAnswer.setAttribute('hidden', '');
+              otherAnswer.parentElement?.classList.remove('open');
+            }
+          }
+        });
+
+        button.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        if (answer) {
+          if (expanded) {
+            answer.setAttribute('hidden', '');
+            answer.parentElement?.classList.remove('open');
+          } else {
+            answer.removeAttribute('hidden');
+            answer.parentElement?.classList.add('open');
+          }
+        }
+      });
+    });
+  }
 });
