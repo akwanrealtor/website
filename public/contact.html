@@ -83,7 +83,12 @@
               </div>
             </div>
           </div>
-          <form class="contact-form">
+          <form
+            id="contactForm"
+            class="contact-form"
+            action="https://portal.getaptly.com/form/JxBQConmBLudiLuYH/new/cp4D2nkeASMiKu5P3"
+            method="POST"
+          >
             <div class="form-row">
               <input type="text" name="name" placeholder="Full Name" required />
               <input type="email" name="email" placeholder="Email Address" required />
@@ -98,6 +103,7 @@
               placeholder="Share the scope, timeline, and goals for your property"
             ></textarea>
             <button type="submit" class="btn btn-primary">Request Consultation</button>
+            <p id="contactMessage" class="form-message" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
