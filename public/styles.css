@@ -456,6 +456,20 @@ img {
   backdrop-filter: blur(10px);
 }
 
+.form-message {
+  min-height: 1.25rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.form-message.success {
+  color: rgba(99, 236, 163, 0.92);
+}
+
+.form-message.error {
+  color: rgba(255, 173, 173, 0.9);
+}
+
 .form-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
