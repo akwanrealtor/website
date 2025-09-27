@@ -244,6 +244,15 @@ img {
   box-shadow: var(--shadow-soft);
 }
 
+.form-card h1,
+.form-card h2,
+.form-card h3,
+.form-card h4,
+.form-card h5,
+.form-card h6 {
+  color: #000000;
+}
+
 form {
   display: grid;
   gap: 1rem;
