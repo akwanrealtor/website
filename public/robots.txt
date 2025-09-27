@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /portal.html
-Disallow: /portal
 Allow: /
 
-Sitemap: https://www.summitpm.com/sitemap.xml
+Sitemap: https://livingsimpleproperties.com/sitemap.xml
