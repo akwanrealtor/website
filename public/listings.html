@@ -8,19 +8,24 @@
       name="description"
       content="Browse LivingSimple Properties listings featuring Rockville, Gaithersburg, Olney, and Germantown homes—each described exactly as showcased on livingsimpleproperties.com."
     />
+    <meta name="theme-color" content="#8DD50C" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/svg+xml" href="images/livingsimple-favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="listings">
     <div class="top-bar">Call Us at <a href="tel:+12402588817">+1 (240) 258-8817</a></div>
     <header class="site-header">
       <nav class="navbar">
-        <a class="brand" href="index.html">LivingSimple <span>Properties</span></a>
+        <a class="brand" href="index.html" aria-label="LivingSimple Properties home">
+          <img class="brand-logo" src="images/livingsimple-logo.svg" alt="" />
+          <span class="sr-only">LivingSimple Properties</span>
+        </a>
         <ul class="nav-links">
           <li><a href="index.html" data-page="home">Home</a></li>
           <li><a href="about.html" data-page="about">About</a></li>
@@ -102,6 +107,7 @@
       <div class="container">
         <div class="footer-grid">
           <div>
+            <img class="footer-logo" src="images/livingsimple-logo.svg" alt="LivingSimple Properties" />
             <h4>Say Hiiiii on Facebook!</h4>
             <p>
               Join the conversation with LivingSimple Properties for neighborhood tips and rental updates.
