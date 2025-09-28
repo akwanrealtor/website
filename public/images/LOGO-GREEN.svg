@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Living Simple Properties logo</title>
+  <desc id="desc">Bright green outlined house emblem with the words living simple properties</desc>
+  <defs>
+    <style>
+      .brand-green { fill: #8bd331; }
+      .brand-stroke { stroke: #8bd331; stroke-width: 32; fill: none; stroke-linejoin: round; }
+      .word-grey { fill: #6d6e71; font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif; font-size: 170px; font-weight: 500; letter-spacing: -2px; }
+      .word-black { fill: #3d3d3d; font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif; font-size: 170px; font-weight: 700; letter-spacing: -2px; }
+      .tagline { fill: #6d6e71; font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif; font-size: 80px; font-weight: 400; letter-spacing: 50px; text-transform: uppercase; }
+    </style>
+  </defs>
+  <g transform="translate(60 60)">
+    <circle class="brand-stroke" cx="210" cy="220" r="195" />
+    <path class="brand-green" d="M210 80 L344 180 V340 H276 V258 H144 V340 H76 V180 Z" />
+    <rect x="190" y="204" width="40" height="40" fill="#fff" opacity="0.9" />
+    <rect x="190" y="256" width="40" height="40" fill="#fff" opacity="0.9" />
+    <rect x="242" y="204" width="40" height="40" fill="#fff" opacity="0.9" />
+    <rect x="242" y="256" width="40" height="40" fill="#fff" opacity="0.9" />
+    <rect x="198" y="212" width="24" height="24" fill="#8bd331" />
+    <rect x="198" y="268" width="24" height="24" fill="#8bd331" />
+    <rect x="254" y="212" width="24" height="24" fill="#8bd331" />
+    <rect x="254" y="268" width="24" height="24" fill="#8bd331" />
+  </g>
+  <g transform="translate(420 250)">
+    <text class="word-grey" x="0" y="120">living</text>
+    <text class="word-black" x="320" y="120">simple</text>
+  </g>
+  <text class="tagline" x="120" y="660">PROPERTIES</text>
+</svg>
