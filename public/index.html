@@ -135,38 +135,7 @@
             <h2>What Clients Are Saying</h2>
             <p>Reviews from local owners and residents across Rockville, Gaithersburg, Bethesda, and NW Washington DC.</p>
           </div>
-          <div class="testimonials">
-            <article class="testimonial">
-              <p>
-                “… Atwan Kwan provided me with a great referral for a tenant who was quiet, clean and always paid on time. I would recommend him for your property management needs.”
-              </p>
-              <strong>Francis H · Rockville – Yelp Business</strong>
-            </article>
-            <article class="testimonial">
-              <p>
-                “… They have always have been very professional and have provided excellent customer service. They found us a reliable renter in a timely manner and at market value …”
-              </p>
-              <strong>Katerina M. · Gaithersburg – Google Business</strong>
-            </article>
-            <article class="testimonial">
-              <p>
-                “… I was referred to Atwan Kwan in Rockville who works in my area. He was immediately able to lease her condo with a great tenant for the next THREE YEARS. My client is extremely happy with LivingSimple Properties as her property manager …”
-              </p>
-              <strong>Taf A. · Gaithersburg – Facebook Business</strong>
-            </article>
-            <article class="testimonial">
-              <p>
-                “… I found the company to be very responsive to what I needed and helped me find the kind of place that I was looking for. Whenever there were hiccups, the manager stepped up personally to address those issues of concern and resolve them …”
-              </p>
-              <strong>Spencer F. · Chinatown, DC – Zillow</strong>
-            </article>
-            <article class="testimonial">
-              <p>
-                “Some of my friends moved into a townhouse. They don’t speak very much English, but he made sure everything was clear and they were comfortable…. Totally recommend LivingSimple for property management …”
-              </p>
-              <strong>Max J. · Gaithersburg – Google Business</strong>
-            </article>
-          </div>
+          <div id="reviews" class="reviews-board">⭐ Reviews loading…</div>
         </div>
       </section>
 
@@ -260,6 +229,98 @@
   </div>
 </footer>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const reviewsSection = document.getElementById("reviews");
+        if (!reviewsSection) {
+          return;
+        }
+
+        const fallbackMessage = "⭐ Live Google reviews will appear here once approved.";
+
+        const showFallback = () => {
+          reviewsSection.innerHTML = "";
+          const placeholder = document.createElement("p");
+          placeholder.className = "reviews-placeholder";
+          placeholder.textContent = fallbackMessage;
+          reviewsSection.appendChild(placeholder);
+        };
+
+        fetch("/api/reviews")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to load reviews");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const reviews = Array.isArray(data) ? data.slice(0, 5) : [];
+
+            const ratingMap = {
+              ONE: 1,
+              TWO: 2,
+              THREE: 3,
+              FOUR: 4,
+              FIVE: 5,
+            };
+
+            if (!reviews.length) {
+              showFallback();
+              return;
+            }
+
+            reviewsSection.innerHTML = "";
+            const cards = document.createElement("div");
+            cards.className = "reviews-grid";
+
+            reviews.forEach((review) => {
+              const card = document.createElement("article");
+              card.className = "review-card";
+
+              const author =
+                review?.reviewer?.displayName ||
+                review?.authorName ||
+                "Anonymous";
+              const starRating = ratingMap[review?.starRating] || review?.rating || 0;
+              const commentValue =
+                typeof review?.comment === "string"
+                  ? review.comment
+                  : review?.comment?.comment ||
+                    review?.text ||
+                    review?.reviewComment ||
+                    "";
+
+              const authorEl = document.createElement("strong");
+              authorEl.className = "review-author";
+              authorEl.textContent = author;
+
+              const starsEl = document.createElement("div");
+              starsEl.className = "review-stars";
+              const starCount = Math.max(0, Math.min(5, Math.round(starRating)));
+              starsEl.textContent = "★".repeat(starCount).padEnd(5, "☆");
+
+              const textEl = document.createElement("p");
+              textEl.className = "review-text";
+              textEl.textContent = commentValue || "No additional comments.";
+
+              card.appendChild(authorEl);
+              card.appendChild(starsEl);
+              card.appendChild(textEl);
+              cards.appendChild(card);
+            });
+
+            reviewsSection.appendChild(cards);
+          })
+          .catch((error) => {
+            console.error(error);
+            showFallback();
+          });
+
+        if (!reviewsSection.textContent.trim()) {
+          showFallback();
+        }
+      });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
