@@ -245,7 +245,6 @@
           placeholder.textContent = fallbackMessage;
           reviewsSection.appendChild(placeholder);
         };
-
         fetch("/api/reviews")
           .then((response) => {
             if (!response.ok) {
@@ -268,11 +267,6 @@
               showFallback();
               return;
             }
-
-            reviewsSection.innerHTML = "";
-            const cards = document.createElement("div");
-            cards.className = "reviews-grid";
-
             reviews.forEach((review) => {
               const card = document.createElement("article");
               card.className = "review-card";
@@ -315,10 +309,6 @@
             console.error(error);
             showFallback();
           });
-
-        if (!reviewsSection.textContent.trim()) {
-          showFallback();
-        }
       });
     </script>
     <script src="script.js"></script>
