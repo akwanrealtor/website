@@ -33,9 +33,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 app.get("/api/reviews", async (req, res) => {
   try {
     // 1. Exchange refresh token for access token
@@ -63,6 +60,10 @@ app.get("/api/reviews", async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Failed to fetch reviews" });
   }
+});
+
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
