@@ -36,9 +36,39 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+app.get("/api/reviews", async (req, res) => {
+  try {
+    // 1. Exchange refresh token for access token
+    const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        client_id: process.env.GOOGLE_CLIENT_ID,
+        client_secret: process.env.GOOGLE_CLIENT_SECRET,
+        refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
+        grant_type: "refresh_token",
+      }),
+    });
+    const { access_token } = await tokenRes.json();
+
+    // 2. Call Google Business Profile API
+    const url = `https://businessprofile.googleapis.com/v1/locations/${process.env.GBP_LOCATION_ID}/reviews`;
+    const reviewsRes = await fetch(url, {
+      headers: { Authorization: `Bearer ${access_token}` },
+    });
+    const reviews = await reviewsRes.json();
+
+    res.json(reviews.reviews || []);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch reviews" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
 module.exports = app;
+
+
