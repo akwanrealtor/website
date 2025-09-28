@@ -194,6 +194,66 @@ img {
   margin: 0 auto;
 }
 
+.blog-layout {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+.blog-main {
+  display: grid;
+  gap: 2rem;
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.blog-sidebar {
+  display: grid;
+  gap: 2rem;
+}
+
+.blog-sidebar .widget h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-sidebar .listings {
+  gap: 0.6rem;
+}
+
+.blog-sidebar .listings li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--text-muted);
+}
+
+.blog-sidebar .listings li::before {
+  content: '•';
+  color: var(--brand-primary);
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.blog-sidebar .listings a {
+  color: inherit;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.blog-sidebar .listings a:hover {
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
 .section-header {
   max-width: 720px;
   margin-bottom: clamp(2rem, 5vw, 3rem);
@@ -370,10 +430,44 @@ textarea {
   gap: 0.5rem;
 }
 
-.footer .affiliations {
+.footer .contact-links,
+.footer .footer-posts {
+  gap: 0.4rem;
+}
+
+.footer .contact-links a {
+  font-weight: 600;
+  color: var(--brand-white);
+}
+
+.footer .footer-posts li {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 0.75rem;
+  gap: 0.25rem;
+}
+
+.footer .footer-posts span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer .affiliations-list {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.footer .affiliations-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer .affiliations-list a::before {
+  content: '•';
+  color: var(--brand-primary);
+  font-size: 1.2em;
+  line-height: 1;
 }
 
 .footer .copyright {
@@ -402,6 +496,16 @@ textarea {
 
 main p + p {
   margin-top: 1rem;
+}
+
+@media (max-width: 960px) {
+  .blog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-sidebar {
+    order: -1;
+  }
 }
 
 @media (max-width: 720px) {
