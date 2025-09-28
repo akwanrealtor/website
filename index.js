@@ -31,7 +31,6 @@ const ensureLogos = () => {
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-ensureLogos();
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res) => {
