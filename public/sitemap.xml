@@ -1,38 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://livingsimpleproperties.com/</loc>
+    <loc>https://www.livingsimpleproperties.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://livingsimpleproperties.com/about/</loc>
+    <loc>https://www.livingsimpleproperties.com/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livingsimpleproperties.com/pricing/</loc>
+    <loc>https://www.livingsimpleproperties.com/pricing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livingsimpleproperties.com/listings/</loc>
+    <loc>https://www.livingsimpleproperties.com/listings/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://livingsimpleproperties.com/blog/</loc>
+    <loc>https://www.livingsimpleproperties.com/blog/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livingsimpleproperties.com/guarantee/</loc>
+    <loc>https://www.livingsimpleproperties.com/guarantee/</loc>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livingsimpleproperties.com/contact/</loc>
+    <loc>https://www.livingsimpleproperties.com/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.livingsimpleproperties.com/reviews/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.livingsimpleproperties.com/rockville/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.livingsimpleproperties.com/silver-spring/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.livingsimpleproperties.com/bethesda/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

@@ -111,6 +111,17 @@ img {
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
+.btn-accent {
+  background: #ffffff;
+  color: var(--brand-deep);
+  border-color: var(--brand-primary);
+}
+
+.btn-accent:hover {
+  background: var(--brand-primary);
+  color: var(--brand-deep);
+}
+
 .btn-primary {
   background: var(--brand-primary);
   color: var(--brand-deep);
@@ -464,20 +475,31 @@ textarea {
   resize: vertical;
 }
 
+.reviews-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
 .reviews-board {
   background: var(--brand-white);
   border-radius: 24px;
-  padding: clamp(2rem, 5vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   border: 1px solid rgba(16, 29, 1, 0.08);
   box-shadow: var(--shadow-soft);
   display: grid;
-  gap: clamp(1.5rem, 4vw, 2.25rem);
+  gap: clamp(1rem, 3vw, 1.5rem);
 }
 
-.reviews-grid {
+.reviews-list {
   display: grid;
-  gap: 1.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.reviews-embed iframe {
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
 }
 
 .review-card {
@@ -509,6 +531,13 @@ textarea {
   text-align: center;
   color: var(--text-muted);
   font-weight: 500;
+}
+
+.service-areas {
+  margin-top: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--brand-deep);
 }
 
 .listings {
