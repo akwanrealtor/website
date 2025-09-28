@@ -3,11 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LivingSimple Properties | Rockville Property Management</title>
+    <title>Home | Rockville, Silver Spring &amp; Bethesda Property Management | LivingSimple Properties</title>
     <meta
       name="description"
-      content="LivingSimple Properties delivers first-name-basis property management across Rockville, Gaithersburg, Bethesda, and NW Washington DC with responsive service, thorough screening, and guaranteed results."
+      content="LivingSimple Properties provides trusted Rockville, Silver Spring, Bethesda and Southern Montgomery County property management with full-service leasing, maintenance, and guaranteed results for local rental owners."
     />
+    <link rel="canonical" href="https://www.livingsimpleproperties.com/" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "LivingSimple Properties",
+        "url": "https://www.livingsimpleproperties.com/",
+        "logo": "https://www.livingsimpleproperties.com/images/LOGO-green.png",
+        "image": "https://www.livingsimpleproperties.com/images/LOGO-green.png",
+        "telephone": "+1-240-213-4179",
+        "email": "admin@livingsimpleproperties.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "500 N. Washington St. #1021",
+          "addressLocality": "Rockville",
+          "addressRegion": "MD",
+          "postalCode": "20850",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          "Rockville",
+          "Silver Spring",
+          "Bethesda",
+          "Southern Montgomery County"
+        ],
+        "sameAs": [
+          "https://www.facebook.com/livingsimpleproperties/"
+        ]
+      }
+    </script>
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#8DD50C" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,6 +64,8 @@
           <li><a href="listings.html" data-page="listings">Listings</a></li>
           <li><a href="blog.html" data-page="blog">Blog</a></li>
           <li><a href="guarantee.html" data-page="guarantee">Guarantee</a></li>
+          <li><a href="rockville/index.html" data-page="service-areas">Service Areas</a></li>
+          <li><a href="reviews.html" data-page="reviews">Reviews</a></li>
           <li><a href="contact.html" data-page="contact">Contact</a></li>
         </ul>
       </nav>
@@ -44,13 +76,14 @@
         <div class="container">
           <div>
             <img class="hero-logo" src="images/logo-favicon.png" alt="LivingSimple Properties icon" />
-            <span class="badge">Rockville Property Management</span>
-            <h1>A First Name Basis Property Management Business</h1>
-            <p class="subheading">(serving Gaithersburg, Rockville, Bethesda and NW Washington DC)</p>
+            <span class="badge">Southern Montgomery County Specialists</span>
+            <h1>Trusted Property Management in Rockville, Silver Spring &amp; Bethesda</h1>
+            <p class="subheading">Full-service rental management for Southern Montgomery County with guaranteed results.</p>
             <p>
               LivingSimple Properties is the top Zillow-reviewed local partner in Rockville. We bring personal, custom service to watch your home so you can live simple—backed by responsive communication, curated vendors, and guarantees that protect your investment.
             </p>
             <div class="hero-actions">
+              <a class="btn btn-accent" href="contact.html#analysis">Get a Free Rental Analysis</a>
               <a class="btn btn-primary" href="pricing.html">View Our Plans</a>
               <a class="btn btn-ghost" href="#rental-report">Request Rental Report</a>
             </div>
@@ -133,9 +166,23 @@
         <div class="container">
           <div class="section-header">
             <h2>What Clients Are Saying</h2>
-            <p>Reviews from local owners and residents across Rockville, Gaithersburg, Bethesda, and NW Washington DC.</p>
+            <p>See the latest Google reviews from property owners and residents in Rockville, Silver Spring, Bethesda, and Southern Montgomery County.</p>
           </div>
-          <div id="reviews" class="reviews-board">⭐ Reviews loading…</div>
+          <div class="reviews-columns">
+            <div id="reviews" class="reviews-board" aria-live="polite">⭐ Reviews loading…</div>
+            <div class="reviews-embed">
+              <iframe
+                title="LivingSimple Properties Google Reviews"
+                src="https://www.google.com/maps/embed?pb=!1m2!2m1!1sLivingSimple%20Properties%20Rockville!5e0!3m2!1sen!2sus!4v1700000000000"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -225,92 +272,11 @@
         </ul>
       </div>
     </div>
+    <div class="service-areas">Service Areas: Rockville • Silver Spring • Bethesda (Southern Montgomery County)</div>
     <div class="copyright">© <span id="year"></span> | LivingSimple LLC</div>
   </div>
 </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const reviewsSection = document.getElementById("reviews");
-        if (!reviewsSection) {
-          return;
-        }
-
-        const fallbackMessage = "⭐ Live Google reviews will appear here once approved.";
-
-        const showFallback = () => {
-          reviewsSection.innerHTML = "";
-          const placeholder = document.createElement("p");
-          placeholder.className = "reviews-placeholder";
-          placeholder.textContent = fallbackMessage;
-          reviewsSection.appendChild(placeholder);
-        };
-        fetch("/api/reviews")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Failed to load reviews");
-            }
-            return response.json();
-          })
-          .then((data) => {
-            const reviews = Array.isArray(data) ? data.slice(0, 5) : [];
-
-            const ratingMap = {
-              ONE: 1,
-              TWO: 2,
-              THREE: 3,
-              FOUR: 4,
-              FIVE: 5,
-            };
-
-            if (!reviews.length) {
-              showFallback();
-              return;
-            }
-            reviews.forEach((review) => {
-              const card = document.createElement("article");
-              card.className = "review-card";
-
-              const author =
-                review?.reviewer?.displayName ||
-                review?.authorName ||
-                "Anonymous";
-              const starRating = ratingMap[review?.starRating] || review?.rating || 0;
-              const commentValue =
-                typeof review?.comment === "string"
-                  ? review.comment
-                  : review?.comment?.comment ||
-                    review?.text ||
-                    review?.reviewComment ||
-                    "";
-
-              const authorEl = document.createElement("strong");
-              authorEl.className = "review-author";
-              authorEl.textContent = author;
-
-              const starsEl = document.createElement("div");
-              starsEl.className = "review-stars";
-              const starCount = Math.max(0, Math.min(5, Math.round(starRating)));
-              starsEl.textContent = "★".repeat(starCount).padEnd(5, "☆");
-
-              const textEl = document.createElement("p");
-              textEl.className = "review-text";
-              textEl.textContent = commentValue || "No additional comments.";
-
-              card.appendChild(authorEl);
-              card.appendChild(starsEl);
-              card.appendChild(textEl);
-              cards.appendChild(card);
-            });
-
-            reviewsSection.appendChild(cards);
-          })
-          .catch((error) => {
-            console.error(error);
-            showFallback();
-          });
-      });
-    </script>
     <script src="script.js"></script>
   </body>
 </html>
