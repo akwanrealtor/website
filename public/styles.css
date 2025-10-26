@@ -535,7 +535,12 @@ img {
 
 form {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+form > div {
+  display: grid;
+  gap: 0.5rem;
 }
 
 label {
@@ -563,6 +568,12 @@ textarea:focus {
 textarea {
   min-height: 140px;
   resize: vertical;
+}
+
+.hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
 }
 
 .reviews-columns {
