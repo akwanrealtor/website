@@ -21,6 +21,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.livingsimpleproperties.com/gallery/</loc>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.livingsimpleproperties.com/blog/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,14 +36,14 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.livingsimpleproperties.com/contact/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.livingsimpleproperties.com/reviews/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.livingsimpleproperties.com/contact/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.livingsimpleproperties.com/rockville/</loc>
