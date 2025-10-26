@@ -13,10 +13,141 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-  anchorLinks.forEach((link) => {
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuBackdrop = mobileMenu?.querySelector('[data-menu-backdrop]');
+  const menuCloseButtons = mobileMenu ? mobileMenu.querySelectorAll('[data-menu-close]') : [];
+  const contactBar = document.querySelector('[data-contact-bar]');
+  let lastFocusedTrigger = null;
+
+  const focusableSelector =
+    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+
+  const getMenuFocusables = () => {
+    if (!mobileMenu) return [];
+    return Array.from(mobileMenu.querySelectorAll(focusableSelector)).filter(
+      (el) => !el.hasAttribute('disabled') && el.getAttribute('tabindex') !== '-1'
+    );
+  };
+
+  const handleMenuKeydown = (event) => {
+    if (!mobileMenu?.classList.contains('is-open')) return;
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setMenuState(false);
+      return;
+    }
+
+    if (event.key !== 'Tab') return;
+
+    const focusable = getMenuFocusables();
+    if (!focusable.length) {
+      event.preventDefault();
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
+  const setMenuState = (isOpen) => {
+    if (!mobileMenu || !navToggle) return;
+
+    const wasOpen = mobileMenu.classList.contains('is-open');
+
+    mobileMenu.classList.toggle('is-open', isOpen);
+    mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.classList.toggle('no-scroll', isOpen);
+
+    if (isOpen && !wasOpen) {
+      lastFocusedTrigger = document.activeElement;
+      const closeButton = mobileMenu.querySelector('[data-menu-close]');
+      const [firstFocusable] = getMenuFocusables();
+      requestAnimationFrame(() => {
+        (closeButton || firstFocusable)?.focus({ preventScroll: true });
+      });
+      document.addEventListener('keydown', handleMenuKeydown);
+    } else if (!isOpen && wasOpen) {
+      document.removeEventListener('keydown', handleMenuKeydown);
+      if (lastFocusedTrigger instanceof HTMLElement && lastFocusedTrigger !== document.body) {
+        lastFocusedTrigger.focus({ preventScroll: true });
+      } else {
+        navToggle.focus({ preventScroll: true });
+      }
+    } else if (!isOpen) {
+      document.body.classList.remove('no-scroll');
+    }
+  };
+
+  navToggle?.addEventListener('click', () => {
+    const willOpen = !mobileMenu?.classList.contains('is-open');
+    setMenuState(willOpen);
+  });
+
+  menuBackdrop?.addEventListener('click', () => setMenuState(false));
+
+  menuCloseButtons.forEach((button) => {
+    button.addEventListener('click', () => setMenuState(false));
+  });
+
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenuState(false));
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 900) {
+      setMenuState(false);
+    }
+  });
+
+  if (contactBar) {
+    let lastScrollY = window.scrollY;
+    const hideThreshold = 12;
+
+    const showContactBar = () => {
+      contactBar.classList.remove('is-hidden');
+      contactBar.removeAttribute('aria-hidden');
+    };
+
+    const hideContactBar = () => {
+      contactBar.classList.add('is-hidden');
+      contactBar.setAttribute('aria-hidden', 'true');
+    };
+
+    showContactBar();
+
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY;
+
+      if (currentY <= 16) {
+        showContactBar();
+      } else if (delta > hideThreshold) {
+        hideContactBar();
+      } else if (delta < -hideThreshold) {
+        showContactBar();
+      }
+
+      lastScrollY = currentY;
+    });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       const targetId = link.getAttribute('href').substring(1);
+      if (!targetId) return;
       const target = document.getElementById(targetId);
       if (target) {
         event.preventDefault();
@@ -25,93 +156,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const sourceUrlInput = document.querySelector('input[name="source_url"]');
-  if (sourceUrlInput) {
-    sourceUrlInput.value = window.location.href;
-  }
+  document.querySelectorAll('input[name="source_url"]').forEach((input) => {
+    input.value = window.location.href;
+  });
 
-  const reviewsSection = document.getElementById('reviews');
-  if (reviewsSection) {
-    const fallbackMessage =
-      '⭐ Live Google reviews will appear here once approved.';
+  const carousel = document.querySelector('[data-carousel]');
+  if (carousel) {
+    const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+    const nextBtn = carousel.querySelector('[data-carousel-next]');
+    const prevBtn = carousel.querySelector('[data-carousel-prev]');
+    const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'));
+    let activeIndex = slides.findIndex((slide) => slide.classList.contains('is-active'));
+    if (activeIndex < 0) activeIndex = 0;
 
-    const showFallback = () => {
-      reviewsSection.innerHTML = '';
-      const placeholder = document.createElement('p');
-      placeholder.className = 'reviews-placeholder';
-      placeholder.textContent = fallbackMessage;
-      reviewsSection.appendChild(placeholder);
+    const setSlide = (index) => {
+      const total = slides.length;
+      const newIndex = ((index % total) + total) % total;
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('is-active', idx === newIndex);
+      });
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('is-active', idx === newIndex);
+        dot.setAttribute('aria-selected', idx === newIndex ? 'true' : 'false');
+      });
+      activeIndex = newIndex;
     };
 
-    const cards = document.createElement('div');
-    cards.className = 'reviews-list';
+    nextBtn?.addEventListener('click', () => {
+      setSlide(activeIndex + 1);
+    });
 
-    fetch('/api/reviews')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to load reviews');
+    prevBtn?.addEventListener('click', () => {
+      setSlide(activeIndex - 1);
+    });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const index = Number(dot.dataset.carouselDot);
+        if (!Number.isNaN(index)) {
+          setSlide(index);
         }
-        return response.json();
-      })
-      .then((data) => {
-        const reviews = Array.isArray(data) ? data.slice(0, 5) : [];
-
-        const ratingMap = {
-          ONE: 1,
-          TWO: 2,
-          THREE: 3,
-          FOUR: 4,
-          FIVE: 5,
-        };
-
-        if (!reviews.length) {
-          showFallback();
-          return;
-        }
-
-        reviews.forEach((review) => {
-          const card = document.createElement('article');
-          card.className = 'review-card';
-
-          const author =
-            review?.reviewer?.displayName ||
-            review?.authorName ||
-            'Anonymous';
-          const starRating = ratingMap[review?.starRating] || review?.rating || 0;
-          const commentValue =
-            typeof review?.comment === 'string'
-              ? review.comment
-              : review?.comment?.comment ||
-                review?.text ||
-                review?.reviewComment ||
-                '';
-
-          const authorEl = document.createElement('strong');
-          authorEl.className = 'review-author';
-          authorEl.textContent = author;
-
-          const starsEl = document.createElement('div');
-          starsEl.className = 'review-stars';
-          const starCount = Math.max(0, Math.min(5, Math.round(starRating)));
-          starsEl.setAttribute('aria-label', `${starCount} star review`);
-          starsEl.textContent = '★'.repeat(starCount).padEnd(5, '☆');
-
-          const textEl = document.createElement('p');
-          textEl.className = 'review-text';
-          textEl.textContent = commentValue || 'No additional comments.';
-
-          card.appendChild(authorEl);
-          card.appendChild(starsEl);
-          card.appendChild(textEl);
-          cards.appendChild(card);
-        });
-
-        reviewsSection.innerHTML = '';
-        reviewsSection.appendChild(cards);
-      })
-      .catch((error) => {
-        console.error(error);
-        showFallback();
       });
+    });
+
+    const autoRotate = () => setSlide(activeIndex + 1);
+    let autoTimer = setInterval(autoRotate, 8000);
+
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(autoTimer);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(autoRotate, 8000);
+    });
   }
 });
