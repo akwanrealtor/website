@@ -2,18 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LivingSimple Property Management | Rockville &amp; DC</title>
     <meta
       name="description"
-      content="LivingSimple provides guaranteed property management in Rockville, Silver Spring, Bethesda, and NW DC with responsive leasing, maintenance, and owner protections."
+      content="LivingSimple delivers guaranteed property management in Rockville, Silver Spring, Bethesda, and NW DC with proactive leasing, responsive maintenance, and transparent owner support."
     />
     <link rel="canonical" href="https://www.livingsimpleproperties.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="LivingSimple Property Management | Rockville &amp; DC" />
     <meta
       property="og:description"
-      content="LivingSimple provides guaranteed property management in Rockville, Silver Spring, Bethesda, and NW DC with responsive leasing, maintenance, and owner protections."
+      content="LivingSimple delivers guaranteed property management in Rockville, Silver Spring, Bethesda, and NW DC with proactive leasing, responsive maintenance, and transparent owner support."
     />
     <meta property="og:url" content="https://www.livingsimpleproperties.com/" />
     <meta property="og:site_name" content="LivingSimple Properties" />
@@ -22,7 +22,7 @@
     <meta name="twitter:title" content="LivingSimple Property Management | Rockville &amp; DC" />
     <meta
       name="twitter:description"
-      content="LivingSimple provides guaranteed property management in Rockville, Silver Spring, Bethesda, and NW DC with responsive leasing, maintenance, and owner protections."
+      content="LivingSimple delivers guaranteed property management in Rockville, Silver Spring, Bethesda, and NW DC with proactive leasing, responsive maintenance, and transparent owner support."
     />
     <meta name="twitter:image" content="https://www.livingsimpleproperties.com/images/logo-green.png" />
     <script type="application/ld+json">
@@ -100,15 +100,24 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="home">
-    <div class="top-bar">
-      <span>Call Us at <a href="tel:+12402134179">240.213.4179</a></span>
-      <span>Email <a href="mailto:admin@livingsimpleproperties.com">admin@livingsimpleproperties.com</a></span>
+    <div class="contact-bar" data-contact-bar>
+      <div class="contact-bar__container">
+        <a class="contact-link" href="tel:+12402134179">
+          <span class="contact-link__label">Call</span>
+          <span class="contact-link__value">240.213.4179</span>
+        </a>
+        <a class="contact-link contact-link--email" href="mailto:admin@livingsimpleproperties.com">
+          <span class="contact-link__label">Email</span>
+          <span class="contact-link__value">admin@livingsimpleproperties.com</span>
+        </a>
+        <span class="contact-link__label contact-link__label--muted">Serving Montgomery County &amp; NW DC</span>
+      </div>
     </div>
+
     <header class="site-header">
-      <nav class="navbar">
-        <a class="brand" href="index.html" aria-label="LivingSimple Properties home">
-          <img class="brand-logo" src="images/logo-green.png" alt="" />
-          <span class="sr-only">LivingSimple Properties</span>
+      <div class="navbar">
+        <a class="brand" href="/" aria-label="LivingSimple Properties home">
+          <img class="brand-logo" src="images/logo-green.png" alt="LivingSimple Properties" />
         </a>
         <nav class="nav-primary desktop-nav" aria-label="Primary navigation">
           <ul class="nav-links">
@@ -132,6 +141,7 @@
           </span>
         </button>
       </div>
+
       <div
         class="menu-panel"
         id="mobile-menu"
@@ -144,14 +154,7 @@
         <div class="menu-panel__content" role="document">
           <div class="menu-panel__header">
             <a class="menu-panel__brand" href="/" aria-label="LivingSimple Properties home">
-              <img
-                src="/assets/images/logo.svg"
-                alt="LivingSimple Properties logo"
-                width="120"
-                height="92"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/logo-green.png" alt="LivingSimple Properties logo" width="120" height="92" loading="lazy" />
             </a>
             <button class="menu-panel__close" type="button" data-menu-close>
               <span class="sr-only">Close menu</span>
@@ -172,9 +175,9 @@
             </ul>
           </nav>
           <div class="menu-panel__footer">
-            <a class="contact-link contact-link--phone" href="tel:+13017614179">Call (301) 761-4179</a>
+            <a class="contact-link contact-link--phone" href="tel:+12402134179">Call (240) 213-4179</a>
             <a class="contact-link contact-link--email" href="mailto:admin@livingsimpleproperties.com"
-              >Email admin@livingsimpleproperties.com</a
+              >admin@livingsimpleproperties.com</a
             >
           </div>
         </div>
@@ -182,333 +185,317 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container">
-          <div>
-            <img class="hero-logo" src="images/logo-green.png" alt="LivingSimple Properties icon" />
-            <span class="badge">Southern Montgomery County Specialists</span>
-            <h1>Trusted Property Management with a Guarantee</h1>
-            <p class="subheading">
-              Lease faster, protect your investment, and stay informed with LivingSimple’s team of Montgomery County specialists.
-            </p>
+      <section class="hero" id="hero">
+        <div class="container hero__layout">
+          <div class="hero__content">
+            <span class="badge">Montgomery County Property Management Specialists</span>
+            <h1>Trusted Property Management with Written Guarantees</h1>
             <p>
-              We combine proactive leasing, 24/7 maintenance coordination, transparent accounting, and three written guarantees—Lease Guarantee, Eviction Protection, and No-Termination Fee—to keep your rentals profitable and stress-free.
+              LivingSimple protects your rental portfolio with proactive leasing, 24/7 maintenance coordination, and transparent
+              owner reporting—backed by guarantees that remove surprises.
             </p>
-            <div class="hero-actions">
+            <ul class="hero__highlights">
+              <li>95+ Google reviews with a 4.9★ rating</li>
+              <li>Average 13 days on market across Montgomery County</li>
+              <li>Dedicated advisor for every owner portfolio</li>
+            </ul>
+            <div class="hero__actions">
               <a class="btn btn-accent" href="/contact.html#analysis">Get a Free Rental Analysis</a>
-              <a class="btn btn-primary" href="/pricing.html">Compare Pricing Plans</a>
-              <a class="btn btn-ghost" href="/reviews.html">Read Owner Reviews</a>
+              <a class="btn btn-outline" href="#services">See how we help</a>
             </div>
           </div>
-          <div class="form-card" id="rental-report">
-            <h2>Start Your Rental Performance Plan</h2>
-            <form action="https://form.jotform.com/submit" method="post">
+          <aside class="hero__card" aria-labelledby="rental-plan-heading">
+            <h2 id="rental-plan-heading">Start Your Rental Performance Plan</h2>
+            <p>We’ll review your property goals, send pricing recommendations, and outline next steps within 24 hours.</p>
+            <form action="https://form.jotform.com/submit" method="post" class="form">
               <input type="hidden" name="source_url" value="" />
-              <div>
-                <label for="hero-name">Name *</label>
-                <input id="hero-name" type="text" name="name" placeholder="Your name" required />
-              </div>
-              <div>
-                <label for="hero-email">Email *</label>
-                <input id="hero-email" type="email" name="email" placeholder="you@email.com" required />
-              </div>
-              <div>
-                <label for="hero-phone">Phone *</label>
-                <input id="hero-phone" type="tel" name="phone" placeholder="(301) 761-4179" required />
-              </div>
-              <div>
-                <label for="hero-message">Property Details *</label>
-                <textarea id="hero-message" name="message" placeholder="Tell us about your rental goals" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Request Analysis</button>
+              <label class="form__field">
+                <span>Name *</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label class="form__field">
+                <span>Email *</span>
+                <input type="email" name="email" placeholder="you@email.com" required />
+              </label>
+              <label class="form__field">
+                <span>Phone *</span>
+                <input type="tel" name="phone" placeholder="(240) 213-4179" required />
+              </label>
+              <label class="form__field">
+                <span>Property Details *</span>
+                <textarea name="message" placeholder="Tell us about your rental goals" required></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary">Request My Plan</button>
             </form>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <section class="guarantee-highlight" id="guarantee-overview">
+      <section class="metrics" aria-label="Company performance metrics">
         <div class="container">
-          <header>
-            <h2>LivingSimple Guarantees Every Owner Enjoys</h2>
-            <p>
-              Every service plan includes written protections designed to eliminate surprises and keep your rental income secure.
-            </p>
-            <a class="btn btn-primary" href="/guarantee.html">Explore the Guarantees</a>
-          </header>
-          <ul>
+          <ul class="metrics__grid">
             <li>
-              <strong>Lease Guarantee</strong>
-              We replace any resident we place who leaves in the first 9 months—at no additional leasing fee.
+              <span class="metrics__value">13</span>
+              <span class="metrics__label">Average days on market</span>
             </li>
             <li>
-              <strong>Eviction Protection</strong>
-              If a court filing is ever required, we pay the filing costs and manage the legal process for you.
+              <span class="metrics__value">98%</span>
+              <span class="metrics__label">On-time rent collection</span>
             </li>
             <li>
-              <strong>No-Termination Fee</strong>
-              If our service ever disappoints, cancel with 30 days’ notice without paying an extra penalty.
+              <span class="metrics__value">24/7</span>
+              <span class="metrics__label">Maintenance coordination</span>
+            </li>
+            <li>
+              <span class="metrics__value">3</span>
+              <span class="metrics__label">Written owner guarantees</span>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="services">
         <div class="container">
-          <div class="section-header">
-            <h2>Full-Service Property Management</h2>
+          <header class="section__header">
+            <h2>Everything Owners Need—Handled by Specialists</h2>
             <p>
-              Dedicated specialists care for every property as if it were their own—maximizing occupancy, keeping maintenance proactive, and delivering owner reporting you can trust.
+              From marketing your listing to renewing residents and reconciling books, LivingSimple oversees every detail so you can
+              stay focused on your goals.
             </p>
-          </div>
-          <div class="grid grid--three">
-            <article class="feature-card">
+          </header>
+          <div class="card-grid card-grid--three">
+            <article class="card">
               <h3>Strategic Leasing</h3>
               <p>
-                Professional marketing, on-demand showings, and screening that verifies income, rental history, and credit so you welcome dependable residents quickly.
+                Professional photography, aggressive online syndication, and scheduled showings designed to place qualified
+                residents faster.
               </p>
-              <a class="text-link" href="/listings.html">See Current Listings</a>
+              <a class="text-link" href="/listings.html">View current listings</a>
             </article>
-            <article class="feature-card">
-              <h3>Responsive Maintenance</h3>
+            <article class="card">
+              <h3>Resident Experience</h3>
               <p>
-                24/7 request handling with vetted vendors, preventative inspections, and transparent updates for every work order.
+                Resident benefits, digital portals, and proactive communication that improve satisfaction and extend renewals year
+                after year.
               </p>
-              <a class="text-link" href="/about.html#team">Meet Our Team</a>
+              <a class="text-link" href="/guarantee.html">Explore our guarantees</a>
             </article>
-            <article class="feature-card">
+            <article class="card">
               <h3>Owner Reporting</h3>
               <p>
-                Monthly statements, year-end 1099s, and a dedicated portfolio advisor keep your cash flow clear and compliant.
+                Transparent accounting, monthly statements, and annual tax prep support with a dedicated advisor for your
+                portfolio.
               </p>
-              <a class="text-link" href="/pricing.html">Compare Plans</a>
+              <a class="text-link" href="/pricing.html">Compare pricing plans</a>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="testimonials" id="reviews">
+      <section class="guarantees" id="guarantee-overview">
         <div class="container">
-          <div class="section-header">
-            <h2>What Clients Are Saying</h2>
-            <p>Verified feedback from local owners across Google and Zillow.</p>
+          <div class="guarantees__header">
+            <h2>Written Guarantees That Protect Every Owner</h2>
+            <p>Three promises that eliminate risk and keep your investment profitable.</p>
+            <a class="btn btn-primary" href="/guarantee.html">See full guarantee details</a>
           </div>
-          <div class="testimonial-carousel" data-carousel>
-            <div class="testimonial-track">
-              <article class="testimonial-card is-active" data-carousel-slide="0">
-                <header>
-                  <span aria-hidden="true">⭐</span>
-                  <p class="testimonial-source">Google Reviews · 4.9 ★ rating</p>
-                </header>
-                <blockquote>
-                  “LivingSimple filled our Rockville home in 12 days and handled every detail. Communication is instant and the maintenance team is proactive.”
-                </blockquote>
-                <p class="testimonial-author">— Michelle P., Single-Family Owner</p>
-                <a
-                  class="btn btn-ghost"
-                  href="https://www.google.com/search?q=livingsimple+properties"
-                  target="_blank"
-                  rel="noopener"
-                  >See All Google Reviews</a
-                >
-              </article>
-              <article class="testimonial-card" data-carousel-slide="1">
-                <header>
-                  <span aria-hidden="true">⭐</span>
-                  <p class="testimonial-source">Zillow Reviews · 5.0 ★ rating</p>
-                </header>
-                <blockquote>
-                  “Atwan and team reduced our vacancy to zero. They secured quality tenants and kept us updated with clear monthly statements.”
-                </blockquote>
-                <p class="testimonial-author">— David L., Bethesda Investor</p>
-                <a
-                  class="btn btn-ghost"
-                  href="https://www.zillow.com/profile/LivingSimple-Properties"
-                  target="_blank"
-                  rel="noopener"
-                  >View Zillow Testimonials</a
-                >
-              </article>
+          <div class="guarantees__grid">
+            <article class="guarantee-card">
+              <h3>Lease Guarantee</h3>
+              <p>We’ll replace any resident we place who leaves within nine months—no additional leasing fees.</p>
+            </article>
+            <article class="guarantee-card">
+              <h3>Eviction Protection</h3>
+              <p>Should an eviction become necessary, we cover court filing costs and manage the legal process for you.</p>
+            </article>
+            <article class="guarantee-card">
+              <h3>No-Termination Fee</h3>
+              <p>If you’re not satisfied, cancel with 30 days’ notice without paying an extra termination penalty.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--split" id="process">
+        <div class="container section__split">
+          <div class="section__content">
+            <h2>How We Deliver a Seamless Owner Experience</h2>
+            <p>Three simple steps to get your property protected and producing reliable income.</p>
+            <ol class="steps">
+              <li>
+                <h3>Schedule your consult</h3>
+                <p>Meet virtually or in person to review property details, pricing, and goals.</p>
+              </li>
+              <li>
+                <h3>Launch your marketing plan</h3>
+                <p>We photograph, list, and show your property while screening every applicant thoroughly.</p>
+              </li>
+              <li>
+                <h3>Enjoy hands-off ownership</h3>
+                <p>Residents receive concierge support while you track performance through your owner portal.</p>
+              </li>
+            </ol>
+          </div>
+          <div class="section__aside">
+            <div class="quote-card">
+              <blockquote>
+                “LivingSimple filled our Rockville home in less than two weeks and handles every detail. Communication is instant
+                and the maintenance team is proactive.”
+              </blockquote>
+              <p class="quote-card__author">— Michelle P., Single-Family Owner</p>
+              <a class="text-link" href="https://www.google.com/search?q=livingsimple+properties" target="_blank" rel="noopener"
+                >Read 95+ Google reviews</a
+              >
             </div>
-            <div class="testimonial-controls">
-              <button type="button" class="carousel-button" data-carousel-prev>
-                <span class="sr-only">Previous testimonial</span>
-                ‹
-              </button>
-              <div class="testimonial-dots" role="tablist" aria-label="Testimonials">
-                <button
-                  type="button"
-                  class="carousel-dot is-active"
-                  role="tab"
-                  aria-selected="true"
-                  data-carousel-dot="0"
-                ></button>
-                <button type="button" class="carousel-dot" role="tab" aria-selected="false" data-carousel-dot="1"></button>
-              </div>
-              <button type="button" class="carousel-button" data-carousel-next>
-                <span class="sr-only">Next testimonial</span>
-                ›
-              </button>
-            </div>
-            <a
-              class="btn btn-primary testimonial-cta"
-              href="https://www.google.com/search?q=livingsimple+properties"
-              target="_blank"
-              rel="noopener"
-              >⭐ See Our 95+ Google Reviews — 4.9★</a
-            >
           </div>
         </div>
       </section>
 
       <section class="section" id="resources">
         <div class="container">
-          <div class="section-header">
-            <h2>Property Management Resource Library</h2>
-            <p>
-              Stay ahead with expert insights on Montgomery County regulations, vacancy prevention, and resident experience.
-            </p>
-          </div>
-          <div class="grid grid--two">
-            <article class="feature-card">
-              <h3>Montgomery County Law Updates</h3>
-              <p>Quarterly digests covering rental licensing, inspection schedules, and upcoming county legislation.</p>
+          <header class="section__header">
+            <h2>Resources to Keep Your Rentals Performing</h2>
+            <p>Insights and guides for Montgomery County owners ready to protect their investment.</p>
+          </header>
+          <div class="card-grid card-grid--two">
+            <article class="card card--bordered">
+              <h3>Montgomery County Compliance Tracker</h3>
+              <p>Quarterly updates covering licensing, inspections, and regulation changes that impact your rentals.</p>
               <a class="text-link" href="/blog.html#montgomery-county-law">Read the latest update</a>
             </article>
-            <article class="feature-card">
-              <h3>Reduce Vacancy Risk</h3>
-              <p>Strategies LivingSimple uses to shorten days on market, retain residents, and protect owner cash flow.</p>
-              <a class="text-link" href="/blog.html#vacancy-risk">Learn how we prevent gaps</a>
+            <article class="card card--bordered">
+              <h3>Vacancy Prevention Playbook</h3>
+              <p>Discover the leasing strategy we use to maintain 98% rent collection and 13-day averages on market.</p>
+              <a class="text-link" href="/blog.html#vacancy-risk">Learn the playbook</a>
             </article>
-            <article class="feature-card">
-              <h3>Resident Experience Matters</h3>
-              <p>Discover how our maintenance guarantee and resident perks drive renewals across Rockville and NW DC.</p>
-              <a class="text-link" href="/blog.html#resident-experience">See our resident approach</a>
+            <article class="card card--bordered">
+              <h3>Resident Experience Blueprint</h3>
+              <p>See how our benefit package and service standards keep renewals high in Silver Spring and NW DC.</p>
+              <a class="text-link" href="/blog.html#resident-experience">Explore the blueprint</a>
             </article>
-            <article class="feature-card">
+            <article class="card card--bordered">
               <h3>Owner Success Stories</h3>
               <p>Case studies featuring renovated townhomes, condo portfolios, and multi-unit investments under our care.</p>
-              <a class="text-link" href="/gallery.html">View the portfolio gallery</a>
+              <a class="text-link" href="/gallery.html">View portfolio results</a>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="lead-capture" aria-labelledby="guide-heading">
-        <div class="container">
-          <div class="lead-capture__content">
-            <h2 id="guide-heading">Download the 10 Questions to Ask Before Hiring a Property Manager</h2>
+      <section class="download" aria-labelledby="guide-heading">
+        <div class="container download__layout">
+          <div class="download__content">
+            <h2 id="guide-heading">Free Guide: 10 Questions to Ask Before Hiring a Property Manager</h2>
             <p>
-              Get the checklist we give prospective owners so you can evaluate partners, avoid hidden fees, and choose a manager who protects your investment.
+              Use our checklist to evaluate potential partners, avoid hidden fees, and confirm the service standards your rentals
+              deserve.
             </p>
             <ul>
-              <li>Understand fee structures and guarantees.</li>
-              <li>Learn which reports to request before signing.</li>
-              <li>Know the service-level commitments to demand.</li>
+              <li>Understand pricing, guarantees, and protections.</li>
+              <li>Know which reports and updates you should expect.</li>
+              <li>Identify the service-level commitments worth demanding.</li>
             </ul>
           </div>
-          <form class="lead-capture__form" action="https://form.jotform.com/submit" method="post">
+          <form class="download__form" action="https://form.jotform.com/submit" method="post">
             <input type="hidden" name="source_url" value="" />
             <label class="sr-only" for="guide-name">Name</label>
             <input id="guide-name" type="text" name="name" placeholder="Full name" required />
             <label class="sr-only" for="guide-email">Email</label>
             <input id="guide-email" type="email" name="email" placeholder="Email address" required />
-            <button type="submit" class="btn btn-accent">Send Me the Guide</button>
-            <p class="form-helper">We’ll email the PDF and a rental analysis checklist—no spam.</p>
+            <button type="submit" class="btn btn-accent">Email me the guide</button>
+            <p class="form-helper">We’ll send the PDF plus a rental analysis checklist—no spam.</p>
           </form>
         </div>
       </section>
 
       <section class="section section--dark" id="service-areas">
         <div class="container">
-          <div class="section-header">
-            <h2>Serving Montgomery County &amp; NW DC</h2>
-            <p>
-              From Metro-accessible condos to luxury single-family homes, we oversee every detail for busy owners and investors.
-            </p>
-          </div>
-          <div class="grid grid--two">
-            <article class="feature-card feature-card--contrast">
+          <header class="section__header">
+            <h2>Serving Montgomery County &amp; Northwest DC</h2>
+            <p>Local specialists who understand each neighborhood’s rental demand and regulations.</p>
+          </header>
+          <div class="card-grid card-grid--two">
+            <article class="card card--contrast">
               <h3>Rockville &amp; Bethesda</h3>
-              <p>
-                Specialized leasing programs for West End, Twinbrook, and Downtown Bethesda properties with corporate relocation demand.
-              </p>
+              <p>Tailored leasing programs for West End, Twinbrook, and Downtown Bethesda properties.</p>
               <a class="text-link" href="/rockville/index.html">Explore Rockville services</a>
             </article>
-            <article class="feature-card feature-card--contrast">
+            <article class="card card--contrast">
               <h3>Silver Spring &amp; NW DC</h3>
-              <p>
-                Resident perks tailored to Takoma Park, Downtown Silver Spring, Chevy Chase, and NW DC rowhomes.
-              </p>
+              <p>Resident perks designed for Takoma Park, Silver Spring, Chevy Chase, and NW DC rowhomes.</p>
               <a class="text-link" href="/silver-spring/index.html">See local expertise</a>
             </article>
           </div>
           <div class="cta-group">
-            <a class="btn btn-primary" href="/contact.html">Schedule a Consultation</a>
-            <a class="btn btn-ghost" href="/pricing.html">Review Pricing &amp; Guarantees</a>
+            <a class="btn btn-primary" href="/contact.html">Schedule a consultation</a>
+            <a class="btn btn-outline" href="/pricing.html">Review pricing &amp; plans</a>
           </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <div class="cta__content">
+            <h2>Ready for stress-free property ownership?</h2>
+            <p>Tell us about your rentals and we’ll craft a personalized management plan within 24 hours.</p>
+          </div>
+          <a class="btn btn-accent" href="/contact.html#analysis">Start my rental analysis</a>
         </div>
       </section>
     </main>
 
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <img class="footer-logo" src="images/logo-green.png" alt="LivingSimple Properties" />
-        <h4>Connect with Atwan Kwan</h4>
-        <p>Call, email, or follow along for responsive property management in Montgomery County and NW DC.</p>
-        <ul class="contact-links">
-          <li><a href="tel:+12402134179">240.213.4179</a></li>
-          <li><a href="mailto:admin@livingsimpleproperties.com">admin@livingsimpleproperties.com</a></li>
-          <li>
-            <a href="https://www.facebook.com/livingsimpleproperties/" target="_blank" rel="noreferrer">facebook.com/livingsimpleproperties</a>
-          </li>
-        </ul>
+    <footer class="footer">
+      <div class="container footer__layout">
+        <div class="footer__brand">
+          <img class="footer-logo" src="images/logo-green.png" alt="LivingSimple Properties" />
+          <p>Responsive property management for Montgomery County and Northwest DC rental owners.</p>
+          <ul class="contact-links">
+            <li><a href="tel:+12402134179">240.213.4179</a></li>
+            <li><a href="mailto:admin@livingsimpleproperties.com">admin@livingsimpleproperties.com</a></li>
+            <li>
+              <a href="https://www.facebook.com/livingsimpleproperties/" target="_blank" rel="noreferrer"
+                >facebook.com/livingsimpleproperties</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Latest from the blog</h3>
+          <ul class="footer-posts">
+            <li>
+              <a href="/blog.html#leasing-momentum">Leasing Momentum: Keeping Your Rental Filled in 30 Days</a>
+              <span>May 6, 2024</span>
+            </li>
+            <li>
+              <a href="/blog.html#spring-maintenance-checklist">Spring Maintenance Checklist for Montgomery County Owners</a>
+              <span>March 20, 2024</span>
+            </li>
+            <li>
+              <a href="/blog.html#resident-benefits">What Residents Love About Our Benefit Package</a>
+              <span>January 10, 2024</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Owner resources</h3>
+          <ul>
+            <li><a href="/pricing.html">Pricing &amp; plans</a></li>
+            <li><a href="/listings.html">Available rentals</a></li>
+            <li><a href="/guarantee.html">Service guarantees</a></li>
+            <li><a href="/contact.html">Contact support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Affiliations</h3>
+          <ul class="affiliations">
+            <li><a href="https://www.narpm.org/" target="_blank" rel="noreferrer">NARPM</a></li>
+            <li><a href="https://gcaar.com/" target="_blank" rel="noreferrer">Greater Capital Area Association of REALTORS®</a></li>
+            <li><a href="https://www.mdrealtor.org/" target="_blank" rel="noreferrer">Maryland REALTORS®</a></li>
+            <li><a href="https://www.nar.realtor/" target="_blank" rel="noreferrer">National Association of REALTORS®</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4>Latest from the Blog</h4>
-        <ul class="footer-posts">
-          <li>
-            <a href="blog.html#leasing-momentum">Leasing Momentum: Keeping Your Rental Filled in 30 Days</a>
-            <span>May 6, 2024</span>
-          </li>
-          <li>
-            <a href="blog.html#spring-maintenance-checklist">Spring Maintenance Checklist for Montgomery County Owners</a>
-            <span>March 20, 2024</span>
-          </li>
-          <li>
-            <a href="blog.html#resident-benefits">What Residents Love About Our Benefit Package</a>
-            <span>January 10, 2024</span>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h4>Owner Resources</h4>
-        <ul>
-          <li><a href="pricing.html">Pricing &amp; Plans</a></li>
-          <li><a href="listings.html">Available Rentals</a></li>
-          <li><a href="guarantee.html">Service Guarantees</a></li>
-          <li><a href="contact.html">Contact Support</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Affiliations</h4>
-        <ul class="affiliations-list">
-          <li>
-            <a href="https://www.narpm.org/" target="_blank" rel="noreferrer">National Association of Residential Property Managers</a>
-          </li>
-          <li>
-            <a href="https://gcaar.com/" target="_blank" rel="noreferrer">Greater Capital Area Association of REALTORS®</a>
-          </li>
-          <li>
-            <a href="https://www.mdrealtor.org/" target="_blank" rel="noreferrer">Maryland REALTORS®</a>
-          </li>
-          <li>
-            <a href="https://www.nar.realtor/" target="_blank" rel="noreferrer">National Association of REALTORS®</a>
-          </li>
-        </ul>
-      </div>
+      <p class="footer__copy">&copy; <span id="year">2024</span> LivingSimple Properties LLC. All rights reserved.</p>
     </footer>
 
     <script src="/script.js" defer></script>
