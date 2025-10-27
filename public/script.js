@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const viewportMeta = document.querySelector('meta[name="viewport"]');
+  if (viewportMeta && !/viewport-fit=cover/.test(viewportMeta.content)) {
+    viewportMeta.content = `${viewportMeta.content}, viewport-fit=cover`;
+  }
+
   const yearEl = document.getElementById('year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
@@ -19,6 +24,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuCloseButtons = mobileMenu ? mobileMenu.querySelectorAll('[data-menu-close]') : [];
   const contactBar = document.querySelector('[data-contact-bar]');
   let lastFocusedTrigger = null;
+  const mobileBreakpoint = window.matchMedia('(max-width: 720px)');
+
+  const createMobileCta = () => {
+    const cta = document.createElement('aside');
+    cta.className = 'mobile-cta';
+    cta.setAttribute('aria-label', 'Quick contact options');
+    cta.setAttribute('aria-hidden', 'true');
+
+    cta.innerHTML = `
+      <div class="mobile-cta__inner">
+        <div class="mobile-cta__copy">
+          <span class="mobile-cta__eyebrow">Need help fast?</span>
+          <p class="mobile-cta__title">Talk with LivingSimple today</p>
+        </div>
+        <div class="mobile-cta__actions">
+          <a class="btn btn-primary" href="tel:+12402134179">Call now</a>
+          <a class="btn btn-outline" href="/contact.html#consultation">Get rent analysis</a>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(cta);
+    return cta;
+  };
+
+  const mobileCta = createMobileCta();
 
   const focusableSelector =
     'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
@@ -59,6 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const updateMobileCtaVisibility = () => {
+    if (!mobileCta) return;
+    const isMobile = mobileBreakpoint.matches;
+    const menuOpen = mobileMenu?.classList.contains('is-open');
+    const shouldShow = isMobile && !menuOpen && window.scrollY > 220;
+
+    mobileCta.classList.toggle('is-visible', shouldShow);
+    mobileCta.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+  };
+
   const setMenuState = (isOpen) => {
     if (!mobileMenu || !navToggle) return;
 
@@ -87,6 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (!isOpen) {
       document.body.classList.remove('no-scroll');
     }
+
+    updateMobileCtaVisibility();
   };
 
   navToggle?.addEventListener('click', () => {
@@ -110,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth >= 900) {
       setMenuState(false);
     }
+    updateMobileCtaVisibility();
   });
 
   if (contactBar) {
@@ -211,4 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
       autoTimer = setInterval(autoRotate, 8000);
     });
   }
+
+  const handleMobileBreakpoint = () => updateMobileCtaVisibility();
+
+  if (typeof mobileBreakpoint.addEventListener === 'function') {
+    mobileBreakpoint.addEventListener('change', handleMobileBreakpoint);
+  } else if (typeof mobileBreakpoint.addListener === 'function') {
+    mobileBreakpoint.addListener(handleMobileBreakpoint);
+  }
+
+  window.addEventListener('scroll', updateMobileCtaVisibility, { passive: true });
+
+  updateMobileCtaVisibility();
 });
