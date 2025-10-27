@@ -115,7 +115,7 @@
     </div>
 
     <header class="site-header">
-      <div class="navbar">
+      <div class="container navbar">
         <a class="brand" href="/" aria-label="LivingSimple Properties home">
           <img class="brand-logo" src="images/logo-green.png" alt="LivingSimple Properties" />
         </a>
@@ -132,14 +132,20 @@
             <li><a href="/contact.html" data-page="contact">Contact</a></li>
           </ul>
         </nav>
-        <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" data-nav-toggle>
-          <span class="sr-only">Toggle navigation</span>
-          <span class="nav-toggle__bars" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
+        <div class="nav-actions">
+          <a class="nav-cta" href="tel:+12402134179">
+            <span class="nav-cta__label">Call</span>
+            <span class="nav-cta__value">(240) 213-4179</span>
+          </a>
+          <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" data-nav-toggle>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle__bars" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
       </div>
 
       <div
@@ -446,21 +452,17 @@
 
     <footer class="footer">
       <div class="container footer__layout">
-        <div class="footer__brand">
+        <div class="footer__section footer__brand">
           <img class="footer-logo" src="images/logo-green.png" alt="LivingSimple Properties" />
           <p>Responsive property management for Montgomery County and Northwest DC rental owners.</p>
-          <ul class="contact-links">
-            <li><a href="tel:+12402134179">240.213.4179</a></li>
-            <li><a href="mailto:admin@livingsimpleproperties.com">admin@livingsimpleproperties.com</a></li>
-            <li>
-              <a href="https://www.facebook.com/livingsimpleproperties/" target="_blank" rel="noreferrer"
-                >facebook.com/livingsimpleproperties</a
-              >
-            </li>
-          </ul>
+          <address class="footer__contact">
+            <a href="tel:+12402134179">Call (240) 213-4179</a>
+            <a href="mailto:admin@livingsimpleproperties.com">admin@livingsimpleproperties.com</a>
+            <span>500 N Washington St · Rockville, MD 20850</span>
+          </address>
         </div>
-        <div>
-          <h3>Latest from the blog</h3>
+        <div class="footer__section">
+          <h3 class="footer__heading">Latest from the blog</h3>
           <ul class="footer-posts">
             <li>
               <a href="/blog.html#leasing-momentum">Leasing Momentum: Keeping Your Rental Filled in 30 Days</a>
@@ -476,17 +478,17 @@
             </li>
           </ul>
         </div>
-        <div>
-          <h3>Owner resources</h3>
-          <ul>
+        <div class="footer__section">
+          <h3 class="footer__heading">Owner resources</h3>
+          <ul class="footer-links">
             <li><a href="/pricing.html">Pricing &amp; plans</a></li>
             <li><a href="/listings.html">Available rentals</a></li>
             <li><a href="/guarantee.html">Service guarantees</a></li>
             <li><a href="/contact.html">Contact support</a></li>
           </ul>
         </div>
-        <div>
-          <h3>Affiliations</h3>
+        <div class="footer__section">
+          <h3 class="footer__heading">Affiliations</h3>
           <ul class="affiliations">
             <li><a href="https://www.narpm.org/" target="_blank" rel="noreferrer">NARPM</a></li>
             <li><a href="https://gcaar.com/" target="_blank" rel="noreferrer">Greater Capital Area Association of REALTORS®</a></li>
