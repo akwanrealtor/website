@@ -67,6 +67,7 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="images/logo-favicon.svg" />
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="contact">
@@ -173,19 +174,41 @@
               <p>
                 Complete the form and we’ll deliver rental comps, projected income, and next steps within one business day.
               </p>
-              <form action="https://form.jotform.com/submit" method="post" class="contact-form">
-                <input type="hidden" name="source_url" value="" />
-                <label for="contact-name">Full name *</label>
-                <input id="contact-name" type="text" name="name" placeholder="Your name" required />
-                <label for="contact-email">Email *</label>
-                <input id="contact-email" type="email" name="email" placeholder="you@email.com" required />
-                <label for="contact-phone">Phone *</label>
-                <input id="contact-phone" type="tel" name="phone" placeholder="(301) 761-4179" required />
-                <label for="contact-property">Property address *</label>
-                <input id="contact-property" type="text" name="property" placeholder="Property address" required />
-                <label for="contact-notes">How can we help?</label>
-                <textarea id="contact-notes" name="message" placeholder="Tell us about your goals"></textarea>
-                <button type="submit" class="btn btn-primary">Send My Request</button>
+              <form
+                action="https://send.pageclip.co/lpQ7r/uPUOP0NKcAnS36jB/contact-form"
+                method="post"
+                class="contact-form pageclip-form"
+              >
+                <div class="contact-form__grid">
+                  <label class="form-field" for="contact-name">
+                    <span>Full name *</span>
+                    <input id="contact-name" type="text" name="name" placeholder="Your name" required />
+                  </label>
+                  <label class="form-field" for="contact-email">
+                    <span>Email *</span>
+                    <input id="contact-email" type="email" name="email" placeholder="you@email.com" required />
+                  </label>
+                  <label class="form-field" for="contact-phone">
+                    <span>Phone *</span>
+                    <input id="contact-phone" type="tel" name="phone" placeholder="(301) 761-4179" required />
+                  </label>
+                  <label class="form-field" for="contact-property">
+                    <span>Property address *</span>
+                    <input id="contact-property" type="text" name="address" placeholder="Property address" required />
+                  </label>
+                </div>
+                <label class="form-field form-field--full" for="contact-notes">
+                  <span>How can we help?</span>
+                  <textarea
+                    id="contact-notes"
+                    name="message"
+                    placeholder="Tell us about your goals"
+                    rows="4"
+                  ></textarea>
+                </label>
+                <button type="submit" class="btn btn-primary pageclip-form__submit">
+                  <span>Send My Request</span>
+                </button>
               </form>
             </div>
             <aside class="contact-info">
@@ -285,6 +308,7 @@
       </div>
     </footer>
 
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
     <script src="/script.js" defer></script>
   </body>
 </html>
