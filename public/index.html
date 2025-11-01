@@ -213,26 +213,19 @@
           <aside class="hero__card" aria-labelledby="rental-plan-heading">
             <h2 id="rental-plan-heading">Start Your Rental Performance Plan</h2>
             <p>We’ll review your property goals, send pricing recommendations, and outline next steps within 24 hours.</p>
-            <form action="https://form.jotform.com/submit" method="post" class="form">
-              <input type="hidden" name="source_url" value="" />
-              <label class="form__field">
-                <span>Name *</span>
-                <input type="text" name="name" placeholder="Your name" required />
-              </label>
-              <label class="form__field">
-                <span>Email *</span>
-                <input type="email" name="email" placeholder="you@email.com" required />
-              </label>
-              <label class="form__field">
-                <span>Phone *</span>
-                <input type="tel" name="phone" placeholder="(240) 213-4179" required />
-              </label>
-              <label class="form__field">
-                <span>Property Details *</span>
-                <textarea name="message" placeholder="Tell us about your rental goals" required></textarea>
-              </label>
-              <button type="submit" class="btn btn-primary">Request My Plan</button>
-            </form>
+            <div class="hero__cta" data-rental-plan-container>
+              <a
+                class="btn btn-primary hero__cta-button"
+                href="/contact#rental-analysis"
+                data-rental-plan-cta
+                aria-label="Start your rental performance plan"
+              >
+                Start Your Rental Performance Plan
+              </a>
+              <p class="hero__cta-subtext">
+                <a class="hero__cta-link" href="/contact">Or open the full form</a>
+              </p>
+            </div>
           </aside>
         </div>
       </section>

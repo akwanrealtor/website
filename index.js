@@ -28,6 +28,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get(['/contact', '/contact/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+});
+
 app.get("/api/reviews", async (req, res) => {
   try {
     // 1. Exchange refresh token for access token

@@ -200,6 +200,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const rentalPlanCta = document.querySelector('[data-rental-plan-cta]');
+  if (rentalPlanCta) {
+    rentalPlanCta.addEventListener('click', (event) => {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'rental_performance_plan_click');
+      }
+
+      const targetId = 'rental-analysis';
+      const anchorTarget = document.getElementById(targetId);
+
+      if (anchorTarget) {
+        event.preventDefault();
+        anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      event.preventDefault();
+      try {
+        const destination = new URL(rentalPlanCta.getAttribute('href') || '/contact', window.location.origin);
+        destination.hash = '';
+        destination.searchParams.set('intent', 'rental-analysis');
+        window.location.href = destination.pathname + destination.search;
+      } catch (error) {
+        window.location.href = '/contact?intent=rental-analysis';
+      }
+    });
+  }
+
   document.querySelectorAll('input[name="source_url"]').forEach((input) => {
     input.value = window.location.href;
   });
