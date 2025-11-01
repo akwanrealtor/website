@@ -70,15 +70,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="pricing">
-    <div class="top-bar">
-      <span>Call Us at <a href="tel:+12402134179">240.213.4179</a></span>
-      <span>Email <a href="mailto:admin@livingsimpleproperties.com">admin@livingsimpleproperties.com</a></span>
+    <div class="contact-bar" data-contact-bar>
+      <div class="contact-bar__container">
+        <a class="contact-link" href="tel:+12402134179">
+          <span class="contact-link__label">Call</span>
+          <span class="contact-link__value">240.213.4179</span>
+        </a>
+        <a class="contact-link contact-link--email" href="mailto:admin@livingsimpleproperties.com">
+          <span class="contact-link__label">Email</span>
+          <span class="contact-link__value">admin@livingsimpleproperties.com</span>
+        </a>
+        <span class="contact-link__label contact-link__label--muted">Serving Montgomery County &amp; NW DC</span>
+      </div>
     </div>
     <header class="site-header">
-      <nav class="navbar">
-        <a class="brand" href="index.html" aria-label="LivingSimple Properties home">
-          <img class="brand-logo" src="images/logo-green.png" alt="" />
-          <span class="sr-only">LivingSimple Properties</span>
+      <div class="container navbar">
+        <a class="brand" href="/" aria-label="LivingSimple Properties home">
+          <img
+            class="brand-logo"
+            src="images/logo-green.png"
+            alt="LivingSimple Properties logo"
+            width="160"
+            height="122"
+          />
         </a>
         <nav class="nav-primary desktop-nav" aria-label="Primary navigation">
           <ul class="nav-links">
@@ -93,14 +107,20 @@
             <li><a href="/contact.html" data-page="contact">Contact</a></li>
           </ul>
         </nav>
-        <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" data-nav-toggle>
-          <span class="sr-only">Toggle navigation</span>
-          <span class="nav-toggle__bars" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
+        <div class="nav-actions">
+          <a class="nav-cta" href="tel:+12402134179">
+            <span class="nav-cta__label">Call</span>
+            <span class="nav-cta__value">(240) 213-4179</span>
+          </a>
+          <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" data-nav-toggle>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle__bars" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
       </div>
       <div
         class="menu-panel"
@@ -114,14 +134,7 @@
         <div class="menu-panel__content" role="document">
           <div class="menu-panel__header">
             <a class="menu-panel__brand" href="/" aria-label="LivingSimple Properties home">
-              <img
-                src="/assets/images/logo.svg"
-                alt="LivingSimple Properties logo"
-                width="120"
-                height="92"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="images/logo-green.png" alt="LivingSimple Properties logo" width="120" height="92" loading="lazy" />
             </a>
             <button class="menu-panel__close" type="button" data-menu-close>
               <span class="sr-only">Close menu</span>
@@ -142,9 +155,9 @@
             </ul>
           </nav>
           <div class="menu-panel__footer">
-            <a class="contact-link contact-link--phone" href="tel:+13017614179">Call (301) 761-4179</a>
+            <a class="contact-link contact-link--phone" href="tel:+12402134179">Call (240) 213-4179</a>
             <a class="contact-link contact-link--email" href="mailto:admin@livingsimpleproperties.com"
-              >Email admin@livingsimpleproperties.com</a
+              >admin@livingsimpleproperties.com</a
             >
           </div>
         </div>
@@ -154,13 +167,14 @@
     <main>
       <section class="page-hero">
         <div class="container">
-          <h1>Property Management Pricing &amp; Plans</h1>
-          <p class="subheading">
-            Transparent fees, proactive service, and written guarantees for owners across Rockville, Silver Spring, Bethesda, and NW DC.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="/contact.html#analysis">Get Custom Pricing</a>
-            <a class="btn btn-accent" href="#plan-details">See Plan Details</a>
+          <div class="page-hero__content">
+            <h1>Property Management Pricing &amp; Plans</h1>
+            <p class="page-hero__subtitle">
+              Transparent fees, proactive service, and written guarantees for owners across Rockville, Silver Spring, Bethesda, and NW DC.
+            </p>
+            <div class="page-hero__actions">
+              <a class="btn btn-primary" href="/contact.html#analysis">Start a Rental Analysis</a>
+            </div>
           </div>
         </div>
       </section>
