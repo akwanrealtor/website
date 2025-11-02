@@ -110,13 +110,13 @@ const HeaderNav: React.FC = () => {
 
   return (
     <header
-      className={`safe-area-x safe-area-y sticky top-0 z-30 bg-white shadow-md transition-all duration-300 ${
-        scrolled ? "shadow-lg" : "shadow"
+      className={`safe-area-x safe-area-y sticky top-0 z-30 transition-all duration-300 ${
+        scrolled ? "bg-white/95 shadow-md backdrop-blur" : "bg-white/80"
       }`}
     >
-      <div className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-3 lg:gap-8 lg:px-8">
+      <div className="relative mx-auto flex min-h-[72px] max-w-6xl items-center justify-between gap-4 px-4">
         <div
-          className="pointer-events-none absolute inset-x-5 bottom-0 h-px bg-gradient-to-r from-transparent via-lime-300/40 to-transparent"
+          className="pointer-events-none absolute inset-x-4 bottom-0 h-px bg-gradient-to-r from-transparent via-lime-300/50 to-transparent"
           aria-hidden
         />
         <a
@@ -139,23 +139,23 @@ const HeaderNav: React.FC = () => {
               {label}
             </a>
           ))}
+          <div className="flex items-center gap-3">
+            <a
+              href="tel:+13018655600"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-lime-400 hover:text-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
+            >
+              <span aria-hidden className="text-base">📞</span>
+              Talk to us
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-sky-400 px-5 py-2 text-sm font-semibold text-slate-900 shadow transition hover:from-lime-300 hover:to-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
+            >
+              <span aria-hidden className="text-base">✨</span>
+              Get my plan
+            </a>
+          </div>
         </nav>
-        <div className="hidden flex-shrink-0 items-center gap-3 lg:flex">
-          <a
-            href="tel:+13018655600"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-lime-400 hover:text-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
-          >
-            <span aria-hidden className="text-base">📞</span>
-            Talk to us
-          </a>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-sky-400 px-5 py-2 text-sm font-semibold text-slate-900 shadow transition hover:from-lime-300 hover:to-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
-          >
-            <span aria-hidden className="text-base">✨</span>
-            Get my plan
-          </a>
-        </div>
         <button
           ref={closeButtonRef}
           type="button"

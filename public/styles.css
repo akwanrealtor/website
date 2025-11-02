@@ -253,9 +253,9 @@ img {
   position: sticky;
   top: var(--safe-top);
   z-index: 90;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(16, 29, 1, 0.08);
-  box-shadow: 0 12px 24px rgba(15, 31, 2, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(16, 29, 1, 0.06);
   transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -270,29 +270,28 @@ img {
 }
 
 .site-header.is-condensed {
-  background: #ffffff;
-  box-shadow: 0 18px 40px rgba(15, 31, 2, 0.12);
-  border-color: rgba(16, 29, 1, 0.12);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 18px 36px rgba(15, 31, 2, 0.16);
+  border-color: rgba(16, 29, 1, 0.1);
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(1.25rem, 3.5vw, 2.75rem);
-  padding-block: clamp(0.9rem, 2vw, 1.25rem);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding-block: clamp(0.7rem, 2vw, 1.05rem);
   position: relative;
-  min-height: 72px;
 }
 
 .navbar::after {
   content: '';
   position: absolute;
-  inset-inline: clamp(1.25rem, 5vw, 3.5rem);
-  bottom: 0.4rem;
+  inset-inline: clamp(1rem, 4vw, 3rem);
+  bottom: 0.35rem;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(141, 213, 12, 0.28), transparent);
-  opacity: 0.45;
+  background: linear-gradient(90deg, transparent, rgba(141, 213, 12, 0.35), transparent);
+  opacity: 0.6;
   pointer-events: none;
 }
 
@@ -340,7 +339,7 @@ img {
   padding: 0;
   display: flex;
   align-items: center;
-  gap: clamp(0.95rem, 2.4vw, 1.8rem);
+  gap: clamp(0.85rem, 2vw, 1.6rem);
 }
 
 .nav-links a {
@@ -348,12 +347,10 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.45rem 0.75rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 999px;
-  color: var(--text-body);
-  transition: color 0.2s ease, background 0.2s ease;
+  padding: 0.35rem 0;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
 }
 
 .nav-links a::after {
@@ -373,7 +370,6 @@ img {
 .nav-links a:hover,
 .nav-links a:focus-visible {
   color: var(--text-body);
-  background: rgba(141, 213, 12, 0.15);
 }
 
 .nav-links a:hover::after,
@@ -390,8 +386,7 @@ img {
 .nav-actions {
   display: inline-flex;
   align-items: center;
-  gap: clamp(0.8rem, 1.8vw, 1.4rem);
-  flex-shrink: 0;
+  gap: clamp(0.6rem, 1.5vw, 1.3rem);
 }
 
 .nav-cta {
