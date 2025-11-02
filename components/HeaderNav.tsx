@@ -20,7 +20,7 @@ const BrandMark: React.FC = () => (
   <span className="flex items-center gap-2 text-slate-900">
     <span
       aria-hidden
-      className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-lime-400 to-emerald-500 text-base font-black text-slate-900"
+      className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-lime-400 to-emerald-500 text-sm font-black text-slate-900"
     >
       LS
     </span>
@@ -34,10 +34,23 @@ const HeaderNav: React.FC = () => {
   const closeButtonRef = React.useRef<HTMLButtonElement | null>(null);
 
   React.useEffect(() => {
-    if (typeof document === "undefined") return;
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (typeof document === "undefined" || typeof window === "undefined") return undefined;
+    const { body, documentElement } = document;
+
+    if (menuOpen) {
+      const scrollBarCompensation = window.innerWidth - documentElement.clientWidth;
+      body.style.overflow = "hidden";
+      if (scrollBarCompensation > 0) {
+        body.style.paddingRight = `${scrollBarCompensation}px`;
+      }
+    } else {
+      body.style.overflow = "";
+      body.style.paddingRight = "";
+    }
+
     return () => {
-      document.body.style.overflow = "";
+      body.style.overflow = "";
+      body.style.paddingRight = "";
     };
   }, [menuOpen]);
 
@@ -84,7 +97,7 @@ const HeaderNav: React.FC = () => {
 
   return (
     <header className="safe-area-x safe-area-y sticky top-0 z-30 bg-white/95 shadow-sm backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
+      <div className="mx-auto flex min-h-[72px] max-w-6xl items-center justify-between gap-4">
         <a
           href="/"
           className="flex items-center gap-2 text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
@@ -103,10 +116,10 @@ const HeaderNav: React.FC = () => {
             </a>
           ))}
           <a
-            href="tel:+13018655600"
-            className="rounded-full bg-lime-500 px-4 py-2 font-semibold text-white shadow-sm transition hover:bg-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
+            href="/contact"
+            className="rounded-full border border-slate-200 px-4 py-2 font-semibold text-slate-900 transition hover:border-lime-400 hover:text-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
           >
-            Call Us
+            Contact
           </a>
         </nav>
         <button
@@ -165,18 +178,11 @@ const HeaderNav: React.FC = () => {
           </nav>
           <div className="flex flex-col gap-3">
             <a
-              href="tel:+13018655600"
-              className="inline-flex items-center justify-center rounded-2xl bg-lime-500 px-4 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-2xl border border-slate-200 px-4 py-3 text-base font-semibold text-slate-900 transition hover:border-lime-400 hover:text-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
               onClick={() => setMenuOpen(false)}
             >
-              Call Us
-            </a>
-            <a
-              href="mailto:hello@livingsimpleproperties.com"
-              className="inline-flex items-center justify-center rounded-2xl border border-slate-200 px-4 py-3 text-base font-medium text-slate-800 transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
-              onClick={() => setMenuOpen(false)}
-            >
-              Email Us
+              Contact
             </a>
           </div>
         </div>
