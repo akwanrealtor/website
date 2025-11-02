@@ -126,12 +126,15 @@ const HeaderNav: React.FC = () => {
         >
           <BrandMark />
         </a>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 lg:flex" aria-label="Primary navigation">
+        <nav
+          className="hidden flex-1 items-center justify-center gap-2 text-[0.95rem] font-semibold text-slate-800 lg:flex"
+          aria-label="Primary navigation"
+        >
           {navLinks.map(({ href, label }) => (
             <a
               key={href}
               href={href}
-              className="rounded-full px-4 py-2 transition hover:bg-lime-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
+              className="inline-flex items-center rounded-full px-3.5 py-2 transition hover:bg-lime-100 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
             >
               {label}
             </a>
