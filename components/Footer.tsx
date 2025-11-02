@@ -5,10 +5,10 @@ import React from "react";
 // Plan: Footer: small logo + quick links, stacked ≤768px.
 
 const quickLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Residents", href: "#residents" },
-  { label: "Blog", href: "#blog" },
+  { label: "Guarantees", href: "#guarantees" },
+  { label: "Win-Win Difference", href: "#difference" },
+  { label: "Local Expertise", href: "#local" },
+  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 

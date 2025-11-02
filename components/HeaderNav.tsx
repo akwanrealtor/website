@@ -10,9 +10,9 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
-  { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#owners", label: "Owners" },
+  { href: "#guarantees", label: "Guarantees" },
+  { href: "#difference", label: "Win-Win Difference" },
+  { href: "#local", label: "Local Expertise" },
   { href: "#contact", label: "Contact" },
 ];
 

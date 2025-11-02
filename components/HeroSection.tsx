@@ -17,42 +17,46 @@ const HeroSection: React.FC = () => {
       className="relative isolate overflow-hidden bg-slate-950 text-white"
       aria-label="LivingSimple Properties hero"
     >
-      <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center gap-8 px-4 py-24 sm:px-6 lg:px-8">
-        <div className="max-w-2xl space-y-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-lime-300">Full-service property management</p>
+      <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center gap-10 px-4 py-28 sm:px-6 lg:px-8">
+        <div className="max-w-3xl space-y-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-lime-300/90">Management with a Guarantee</p>
           <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-            Stress-free rentals for Montgomery County homeowners
+            Win-win property management for Rockville, Bethesda, Silver Spring, and NW DC landlords.
           </h1>
           <p className="text-base leading-7 text-slate-100/90 sm:text-lg">
-            Leasing, maintenance, renewals, and accounting handled by experts who treat your property like our own.
+            Enjoy calm, consistent returns with a partner who covers the what-ifs—lease breaks, evictions, and the stress that
+            comes with them.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="tel:+13018655600"
-              className="inline-flex items-center justify-center rounded-full bg-lime-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg transition hover:bg-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-full bg-lime-400 px-7 py-3 text-sm font-semibold text-slate-950 shadow-lg transition hover:bg-lime-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
             >
-              Schedule a Call
+              Start Your Rental Performance Plan
             </a>
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              href="tel:+13018655600"
+              className="inline-flex items-center justify-center rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Download the Owner Guide
+              Talk with a Property Expert
             </a>
           </div>
         </div>
         <dl className="grid gap-6 text-sm text-white/80 sm:grid-cols-3">
-          <div>
-            <dt className="font-semibold text-white">Average Days-to-Lease</dt>
-            <dd className="text-3xl font-semibold text-lime-300">10</dd>
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <dt className="font-semibold text-white">Guaranteed Protections</dt>
+            <dd className="mt-2 text-3xl font-semibold text-lime-300">3 Included</dd>
+            <dd className="mt-1 text-xs uppercase tracking-[0.25em] text-white/70">Lease-Break • Eviction • Exit</dd>
           </div>
-          <div>
-            <dt className="font-semibold text-white">Google Reviews</dt>
-            <dd className="text-3xl font-semibold text-lime-300">95+</dd>
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <dt className="font-semibold text-white">Local Homes Managed</dt>
+            <dd className="mt-2 text-3xl font-semibold text-lime-300">250+</dd>
+            <dd className="mt-1 text-xs uppercase tracking-[0.25em] text-white/70">Montgomery County &amp; NW DC</dd>
           </div>
-          <div>
-            <dt className="font-semibold text-white">Portfolio Occupancy</dt>
-            <dd className="text-3xl font-semibold text-lime-300">99%</dd>
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <dt className="font-semibold text-white">Owner Satisfaction</dt>
+            <dd className="mt-2 text-3xl font-semibold text-lime-300">4.9★</dd>
+            <dd className="mt-1 text-xs uppercase tracking-[0.25em] text-white/70">95+ Google Reviews</dd>
           </div>
         </dl>
       </div>

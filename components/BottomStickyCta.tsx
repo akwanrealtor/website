@@ -24,16 +24,16 @@ const BottomStickyCta: React.FC = () => {
     >
       <div className="flex w-full max-w-md items-center justify-between gap-3 rounded-full bg-slate-900/95 px-4 py-3 text-sm text-white shadow-2xl backdrop-blur">
         <a
-          href="tel:+13018655600"
-          className="flex-1 rounded-full bg-lime-500 px-4 py-2 text-center font-semibold text-slate-900 transition hover:bg-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
+          href="#contact"
+          className="flex-1 rounded-full bg-lime-400 px-4 py-2 text-center font-semibold text-slate-900 transition hover:bg-lime-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
         >
-          📞 Call
+          🚀 Start Your Plan
         </a>
         <a
-          href="#rental-report"
+          href="tel:+13018655600"
           className="flex-1 rounded-full border border-white/50 px-4 py-2 text-center font-semibold text-white transition hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
-          📊 Get Rental Report
+          📞 Call Us
         </a>
       </div>
     </div>
