@@ -66,15 +66,11 @@ const ContactBar: React.FC = () => {
             Responsive property management across Montgomery County.
           </p>
         </div>
-      </aside>
-      <div
-        aria-hidden
-        style={{
-          height: visible ? `calc(${BAR_HEIGHT}px + env(safe-area-inset-top, 0px))` : "0px",
-          transition: "height 300ms ease",
-        }}
-      />
-    </>
+        <p className="hidden text-xs text-white/80 sm:block">
+          Management with a guarantee for Rockville, Bethesda, Silver Spring, and NW DC.
+        </p>
+      </div>
+    </aside>
   );
 };
 
