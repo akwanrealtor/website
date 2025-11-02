@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuBackdrop = mobileMenu?.querySelector('[data-menu-backdrop]');
   const menuCloseButtons = mobileMenu ? mobileMenu.querySelectorAll('[data-menu-close]') : [];
   const contactBar = document.querySelector('[data-contact-bar]');
+  const siteHeader = document.querySelector('[data-site-header]');
   let lastFocusedTrigger = null;
   const mobileBreakpoint = window.matchMedia('(max-width: 720px)');
 
@@ -186,6 +187,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       lastScrollY = currentY;
     });
+  }
+
+  if (siteHeader) {
+    const updateHeaderState = () => {
+      const shouldCondense = window.scrollY > 12;
+      siteHeader.classList.toggle('is-condensed', shouldCondense);
+    };
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
   }
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {

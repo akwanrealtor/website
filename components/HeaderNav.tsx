@@ -30,6 +30,7 @@ const BrandMark: React.FC = () => (
 
 const HeaderNav: React.FC = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
   const menuRef = React.useRef<HTMLDivElement | null>(null);
   const closeButtonRef = React.useRef<HTMLButtonElement | null>(null);
 
@@ -93,11 +94,31 @@ const HeaderNav: React.FC = () => {
     };
   }, [menuOpen]);
 
+  React.useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 12);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const toggleMenu = () => setMenuOpen((previous) => !previous);
 
   return (
-    <header className="safe-area-x safe-area-y sticky top-0 z-30 bg-white/95 shadow-sm backdrop-blur">
-      <div className="mx-auto flex min-h-[72px] max-w-6xl items-center justify-between gap-4">
+    <header
+      className={`safe-area-x safe-area-y sticky top-0 z-30 bg-white shadow-md transition-all duration-300 ${
+        scrolled ? "shadow-lg" : "shadow"
+      }`}
+    >
+      <div className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-3 lg:gap-8 lg:px-8">
+        <div
+          className="pointer-events-none absolute inset-x-5 bottom-0 h-px bg-gradient-to-r from-transparent via-lime-300/40 to-transparent"
+          aria-hidden
+        />
         <a
           href="/"
           className="flex items-center gap-2 text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
@@ -105,23 +126,36 @@ const HeaderNav: React.FC = () => {
         >
           <BrandMark />
         </a>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 lg:flex" aria-label="Primary navigation">
+        <nav
+          className="hidden flex-1 items-center justify-center gap-2 text-[0.95rem] font-semibold text-slate-800 lg:flex"
+          aria-label="Primary navigation"
+        >
           {navLinks.map(({ href, label }) => (
             <a
               key={href}
               href={href}
-              className="rounded-full px-4 py-2 transition hover:bg-lime-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
+              className="inline-flex items-center rounded-full px-3.5 py-2 transition hover:bg-lime-100 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
             >
               {label}
             </a>
           ))}
+        </nav>
+        <div className="hidden flex-shrink-0 items-center gap-3 lg:flex">
+          <a
+            href="tel:+13018655600"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-lime-400 hover:text-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
+          >
+            <span aria-hidden className="text-base">📞</span>
+            Talk to us
+          </a>
           <a
             href="/contact"
-            className="rounded-full border border-slate-200 px-4 py-2 font-semibold text-slate-900 transition hover:border-lime-400 hover:text-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-sky-400 px-5 py-2 text-sm font-semibold text-slate-900 shadow transition hover:from-lime-300 hover:to-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200"
           >
-            Contact
+            <span aria-hidden className="text-base">✨</span>
+            Get my plan
           </a>
-        </nav>
+        </div>
         <button
           ref={closeButtonRef}
           type="button"
@@ -157,18 +191,32 @@ const HeaderNav: React.FC = () => {
       <div
         ref={menuRef}
         id="mobile-menu"
-        className={`fixed inset-x-0 top-0 z-20 bg-white/98 pt-[72px] transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed inset-x-0 top-0 z-20 bg-white/95 pt-[72px] backdrop-blur transition-transform duration-300 ease-out lg:hidden ${
           menuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
         aria-hidden={!menuOpen}
       >
-        <div className="safe-area-x safe-area-y space-y-4 pb-16">
+        <div className="safe-area-x safe-area-y space-y-5 pb-16">
+          <div className="px-6">
+            <div className="flex items-center justify-between rounded-3xl border border-slate-200/70 bg-white/70 px-4 py-3 text-sm text-slate-600 shadow-sm">
+              <div className="flex items-center gap-2 font-medium text-slate-800">
+                <span aria-hidden className="text-base">⚡</span>
+                We're ready when you are
+              </div>
+              <a
+                href="tel:+13018655600"
+                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-white"
+              >
+                <span aria-hidden>📞</span> Call now
+              </a>
+            </div>
+          </div>
           <nav className="flex flex-col" aria-label="Mobile primary navigation">
             {navLinks.map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
-                className="flex items-center justify-between border-b border-slate-100 px-2 py-3 text-base font-medium text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
+                className="flex items-center justify-between border-b border-slate-100 px-6 py-3 text-base font-medium text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
                 onClick={() => setMenuOpen(false)}
               >
                 {label}
@@ -176,13 +224,22 @@ const HeaderNav: React.FC = () => {
               </a>
             ))}
           </nav>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 px-6">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-2xl border border-slate-200 px-4 py-3 text-base font-semibold text-slate-900 transition hover:border-lime-400 hover:text-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base font-semibold text-slate-900 transition hover:border-lime-400 hover:text-lime-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-500"
               onClick={() => setMenuOpen(false)}
             >
-              Contact
+              <span aria-hidden className="text-lg">✨</span>
+              Start my plan
+            </a>
+            <a
+              href="tel:+13018655600"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-base font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-400"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span aria-hidden className="text-lg">📞</span>
+              Speak to a strategist
             </a>
           </div>
         </div>
