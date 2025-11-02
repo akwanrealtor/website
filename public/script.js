@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="mobile-cta__title">Talk with LivingSimple today</p>
         </div>
         <div class="mobile-cta__actions">
-          <a class="btn btn-primary" href="tel:+12402134179">Call now</a>
+          <a class="btn btn-primary" href="tel:+12402588817">Call now</a>
           <a class="btn btn-outline" href="/contact.html#consultation">Get rent analysis</a>
         </div>
       </div>
