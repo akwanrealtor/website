@@ -102,22 +102,38 @@
   <body data-page="home">
     <div class="contact-bar" data-contact-bar>
       <div class="contact-bar__container">
-        <a class="contact-link" href="tel:+12402588817">
-          <span class="contact-link__label">Call</span>
-          <span class="contact-link__value">+1 (240) 258-8817</span>
-        </a>
-        <a class="contact-link contact-link--email" href="mailto:admin@livingsimpleproperties.com">
-          <span class="contact-link__label">Email</span>
-          <span class="contact-link__value">admin@livingsimpleproperties.com</span>
-        </a>
-        <span class="contact-link__label contact-link__label--muted">Serving Montgomery County &amp; NW DC</span>
+        <div class="contact-bar__status">
+          <span class="contact-bar__pulse" aria-hidden="true"></span>
+          Live support daily
+        </div>
+        <p class="contact-bar__tagline">Property pros across Montgomery County &amp; NW DC—ready within one business day.</p>
+        <div class="contact-bar__actions">
+          <a class="contact-link contact-link--phone" href="tel:+12402588817">
+            <span class="contact-link__icon" aria-hidden="true">📞</span>
+            <span class="contact-link__content">
+              <span class="contact-link__label">Call</span>
+              <span class="contact-link__value">+1 (240) 258-8817</span>
+            </span>
+          </a>
+          <a class="contact-link contact-link--email" href="mailto:admin@livingsimpleproperties.com">
+            <span class="contact-link__icon" aria-hidden="true">✉️</span>
+            <span class="contact-link__content">
+              <span class="contact-link__label">Email</span>
+              <span class="contact-link__value">admin@livingsimpleproperties.com</span>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
 
-    <header class="site-header">
+    <header class="site-header" data-site-header>
       <div class="container navbar">
         <a class="brand" href="/" aria-label="LivingSimple Properties home">
-          <img class="brand-logo" src="images/logo-green.png" width="160" height="122" alt="LivingSimple Properties" />
+          <img class="brand-logo" src="/images/logo-green.png" width="148" height="112" alt="LivingSimple Properties" />
+          <span class="brand__text">
+            <span class="brand__title">LivingSimple</span>
+            <span class="brand__subtitle">Property Management</span>
+          </span>
         </a>
         <nav class="nav-primary desktop-nav" aria-label="Primary navigation">
           <ul class="nav-links">
@@ -127,15 +143,26 @@
             <li><a href="/listings.html" data-page="listings">Listings</a></li>
             <li><a href="/gallery.html" data-page="gallery">Gallery</a></li>
             <li><a href="/guarantee.html" data-page="guarantee">Guarantee</a></li>
+            <li><a href="/rockville/index.html" data-page="service-areas">Service Areas</a></li>
             <li><a href="/reviews.html" data-page="reviews">Reviews</a></li>
             <li><a href="/blog.html" data-page="blog">Blog</a></li>
             <li><a href="/contact.html" data-page="contact">Contact</a></li>
           </ul>
         </nav>
         <div class="nav-actions">
-          <a class="nav-cta" href="tel:+12402588817">
-            <span class="nav-cta__label">Call</span>
-            <span class="nav-cta__value">+1 (240) 258-8817</span>
+          <a class="nav-cta nav-cta--outline" href="tel:+12402588817">
+            <span class="nav-cta__icon" aria-hidden="true">📞</span>
+            <span class="nav-cta__copy">
+              <span class="nav-cta__label">Talk with us</span>
+              <span class="nav-cta__value">+1 (240) 258-8817</span>
+            </span>
+          </a>
+          <a class="nav-cta nav-cta--primary" href="/contact.html#consultation">
+            <span class="nav-cta__icon" aria-hidden="true">✨</span>
+            <span class="nav-cta__copy">
+              <span class="nav-cta__label">Guarantee my rent</span>
+              <span class="nav-cta__value">Start my plan</span>
+            </span>
           </a>
           <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" data-nav-toggle>
             <span class="sr-only">Toggle navigation</span>
@@ -160,12 +187,16 @@
         <div class="menu-panel__content" role="document">
           <div class="menu-panel__header">
             <a class="menu-panel__brand" href="/" aria-label="LivingSimple Properties home">
-              <img src="images/logo-green.png" alt="LivingSimple Properties logo" width="120" height="92" loading="lazy" />
+              <img src="/images/logo-green.png" alt="LivingSimple Properties logo" width="120" height="92" loading="lazy" />
             </a>
             <button class="menu-panel__close" type="button" data-menu-close>
               <span class="sr-only">Close menu</span>
               <span aria-hidden="true">&times;</span>
             </button>
+          </div>
+          <div class="menu-panel__intro">
+            <p class="menu-panel__eyebrow">Full-service specialists</p>
+            <p class="menu-panel__headline">Local experts safeguarding your rentals with written guarantees.</p>
           </div>
           <nav class="menu-panel__nav" aria-label="Mobile primary navigation">
             <ul class="nav-links">
@@ -175,20 +206,32 @@
               <li><a href="/listings.html" data-page="listings">Listings</a></li>
               <li><a href="/gallery.html" data-page="gallery">Gallery</a></li>
               <li><a href="/guarantee.html" data-page="guarantee">Guarantee</a></li>
+              <li><a href="/rockville/index.html" data-page="service-areas">Service Areas</a></li>
               <li><a href="/reviews.html" data-page="reviews">Reviews</a></li>
               <li><a href="/blog.html" data-page="blog">Blog</a></li>
               <li><a href="/contact.html" data-page="contact">Contact</a></li>
             </ul>
           </nav>
           <div class="menu-panel__footer">
-            <a class="contact-link contact-link--phone" href="tel:+12402588817">Call +1 (240) 258-8817</a>
-            <a class="contact-link contact-link--email" href="mailto:admin@livingsimpleproperties.com"
-              >admin@livingsimpleproperties.com</a
-            >
+            <a class="contact-link contact-link--phone" href="tel:+12402588817">
+              <span class="contact-link__icon" aria-hidden="true">📞</span>
+              <span class="contact-link__content">
+                <span class="contact-link__label">Call</span>
+                <span class="contact-link__value">+1 (240) 258-8817</span>
+              </span>
+            </a>
+            <a class="contact-link contact-link--email" href="mailto:admin@livingsimpleproperties.com">
+              <span class="contact-link__icon" aria-hidden="true">✉️</span>
+              <span class="contact-link__content">
+                <span class="contact-link__label">Email</span>
+                <span class="contact-link__value">admin@livingsimpleproperties.com</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
     </header>
+
 
     <main>
       <section class="hero" id="hero">
